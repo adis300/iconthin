@@ -117,11 +117,11 @@ a {
     margin: 3.2em 1.2em 0 1.2em;
 }
 
-.nav>li>a.active {
+.nav>li.navbar-menu-item>a.active {
     border-color: #24a565;
 }
 
-.nav>li>a {
+.nav>li.navbar-menu-item>a {
     padding: 0.1em 0.4em;
     border-bottom: solid;
     border-width: 3px;
