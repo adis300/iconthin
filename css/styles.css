@@ -1,0 +1,30 @@
+body {
+    font-size: 12px;
+}
+
+a {
+    color: inherit;
+}
+
+.top-bar-item {
+    margin: 0em 0.4em;
+    cursor: pointer;
+}
+
+.top-bar {
+    padding: 0.8em 5em;
+    background-color: #fbfbfb;
+    color: #9b9b9b;
+    font-weight: bold;
+    width: 100%;
+}
+
+.top-bar-item-right {
+    margin: 0em 2em;
+    float: right;
+    cursor: pointer;
+}
+
+.top-bar-item-right i {
+    color: #6cc5d7;
+}
