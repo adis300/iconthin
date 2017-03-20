@@ -1,4 +1,23 @@
+@font-face {
+    font-family: gandhi-sans;
+    font-weight: bold;
+    font-style: bold;
+    src: url("../fonts/gandhiSans-regular.otf") format("opentype");
+}
+
+h3 {
+    font-family: 'Agency FB', sans-serif;
+    font-size: 26px;
+    font-weight: normal;
+    text-align: left;
+    line-height: 100%;
+    border-bottom: 1px solid #484848;
+    padding-bottom: 5px;
+    margin-bottom: 7px;
+}
+
 body {
+    font-family: gandhi-sans;
     font-size: 12px;
 }
 
@@ -6,25 +25,111 @@ a {
     color: inherit;
 }
 
-.top-bar-item {
-    margin: 0em 0.4em;
+.header-bar-item {
+    margin: 0em 0.6em;
     cursor: pointer;
 }
 
-.top-bar {
-    padding: 0.8em 5em;
+.page {
+    padding-left: 5em;
+    padding-right: 5em;
+}
+
+.header-bar {
+    padding-top: 0.8em;
+    padding-bottom: 0.8em;
     background-color: #fbfbfb;
+    border: solid #f0f0f0;
+    border-width: 0 0 1px 0;
     color: #9b9b9b;
     font-weight: bold;
     width: 100%;
 }
 
-.top-bar-item-right {
-    margin: 0em 2em;
+.header-bar-item-right {
+    margin: 0em 1.6em;
     float: right;
     cursor: pointer;
 }
 
-.top-bar-item-right i {
+.header-bar-item-center {
+    margin: 0em 2em;
+    float: center;
+    cursor: pointer;
+    white-space: nowrap;
+}
+
+.header-bar-item-right i,
+.header-bar-item-center i {
     color: #6cc5d7;
+}
+
+
+/* nav bar classes */
+
+.navbar,
+.navbar-inverse {
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+}
+
+.navbar-inverse {
+    background-color: #73c183;
+}
+
+.nav li,
+.navbar-inverse .navbar-brand {
+    display: inline;
+    color: white;
+}
+
+.navbar-inverse .navbar-nav>li>a {
+    color: #ffffff;
+}
+
+.navbar-toggle,
+.navbar-collapse {
+    border: none;
+}
+
+.navbar-inverse .navbar-toggle:focus,
+.navbar-inverse .navbar-toggle:hover {
+    background-color: #24a565;
+}
+
+.navbar-inverse .navbar-nav li a:hover {
+    transition: 0.7s all linear;
+    height: 100%;
+    border: none;
+}
+
+.navbar-brand img {
+    margin: -0.6em 2em 0em -0.5em;
+    height: 4em;
+}
+
+.navbar-menu-item a {
+    font-size: 16px;
+    font-weight: thin;
+    color: #24a565;
+    background-color: inherit;
+    margin: 3.2em 1.2em 0 1.2em;
+}
+
+.nav>li>a.active {
+    border-color: #24a565;
+}
+
+.nav>li>a {
+    padding: 0.1em 0.4em;
+    border-bottom: solid;
+    border-width: 3px;
+    border-color: white;
+}
+
+.nav>li>a:focus,
+.nav>li>a:hover {
+    border-color: #24a565;
+    background-color: inherit;
 }
