@@ -1,1 +1,1 @@
-$(document).foundation()
+$("#home-banner").carousel();
