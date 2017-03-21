@@ -213,8 +213,9 @@ h1.product-slogan {
     text-align: center;
 }
 
-.section-header>h1 {
+.section-header>h2 {
     padding: 0;
+    text-transform: uppercase;
 }
 
 .section-header>span {

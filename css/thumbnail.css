@@ -1,0 +1,89 @@
+figure.img-box {
+    width: 100%;
+    height: 220px;
+    overflow: hidden;
+    position: relative;
+    display: inline-block;
+    vertical-align: top;
+    box-shadow: 0 0 5px #ddd;
+    margin: 1em;
+}
+
+figcaption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    height: 100%;
+    display: table;
+}
+
+figcaption div {
+    display: table-cell;
+    vertical-align: middle;
+    position: relative;
+    top: 20px;
+    opacity: 0;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+figcaption div span.thumbnail-box {
+    padding: 1.2em 1em 1em 1em;
+    border: 1px solid #fff;
+    font-weight: thin;
+}
+
+
+/*
+figcaption div:after {
+    position: absolute;
+    content: "";
+    left: 0;
+    right: 0;
+    bottom: 40%;
+    text-align: center;
+    margin: auto;
+    width: 0%;
+    height: 2px;
+    background: #fff;
+}
+*/
+
+figure.img-box img {
+    -webkit-transition: all 0.2s linear;
+    transition: all 0.2s linear;
+    -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+}
+
+figure.img-box:hover figcaption {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+figcaption:hover div {
+    opacity: 1;
+    top: 0;
+}
+
+figcaption:hover div:after {
+    width: 50%;
+}
+
+figure.img-box:hover img {
+    -webkit-transform: scale3d(1.1, 1.1, 1);
+    transform: scale3d(1.1, 1.1, 1);
+}
+
+
+/* How to use
+<figure class="img-box">
+  <img src="demo.jpg" alt="Thumb" width="400" height="300">
+  <figcaption><div>Thumbnail Caption</div></figcaption>
+</figure>
+
+*/
