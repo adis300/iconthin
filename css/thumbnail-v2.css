@@ -1,3 +1,12 @@
+/* How to use image box
+<figure class="img-box">
+    <img src="img/home-astaxanthin1.jpg" alt="The team">
+    <figcaption>
+        <div><span class="thumbnail-box">The team<span></div>
+    </figcaption>
+</figure>
+*/
+
 figure.img-box {
     width: 100%;
     height: 220px;
@@ -22,21 +31,11 @@ figcaption {
     display: table;
 }
 
-figcaption dimmer {
-    display: table-cell;
-    vertical-align: middle;
-    position: relative;
-    top: 20px;
-    opacity: 0;
-    color: #fff;
-    text-transform: uppercase;
-}
-
 figcaption div {
     display: table-cell;
     vertical-align: middle;
     position: relative;
-    top: 20px;
+    top: 20;
     color: #fff;
     text-transform: uppercase;
 }
@@ -74,11 +73,6 @@ figure.img-box:hover figcaption {
     background: rgba(0, 0, 0, 0.5);
 }
 
-figcaption:hover dimmer {
-    opacity: 1;
-    top: 0;
-}
-
 figcaption:hover div:after {
     width: 50%;
 }
@@ -89,12 +83,85 @@ figure.img-box:hover img {
 }
 
 
-/* How to use
-<figure class="img-box">
-    <img src="img/home-astaxanthin1.jpg" alt="The team">
-    <figcaption>
-        <dimmer></dimmer>
-        <div><span class="thumbnail-box">The team<span></div>
-    </figcaption>
+/* gradient box impl
+<figure class="grad-box">
+    <img src="img/home-astaxanthin.jpg">
+    <div>
+        <h1>Source of youth</h1>
+        <span>The strongest antioxidant discovered<br></span>
+        <span>The only carotenoid that can cross blood brain barrier</span>
+    </div>
 </figure>
 */
+
+figure.grad-box {
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
+
+figure.grad-box div {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    padding: 4em;
+    text-align: right;
+    background: transparent;
+    background: -webkit-linear-gradient(80deg, rgba(255, 255, 255, 0.25), white);
+    background: -o-linear-gradient(80deg, rgba(255, 255, 255, 0.25), white);
+    background: -moz-linear-gradient(80deg, rgba(255, 255, 255, 0.25), white);
+    background: linear-gradient(80deg, rgba(255, 255, 255, 0.25), white);
+}
+
+figure.grad-box h1 {
+    color: #1da565;
+    text-transform: uppercase;
+}
+
+figure.grad-box span {
+    font-size: 14px;
+    color: #555;
+}
+
+figure.grad-box img {
+    min-height: 250px;
+    width: 100%;
+}
+
+
+/* img-card impl
+*/
+
+figure.img-card {
+    width: 100%;
+    height: 260px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 5px #ddd;
+    margin: 1em;
+}
+
+figure.img-card div {
+    width: 100%;
+    top: 0;
+    height: 220px;
+    overflow: hidden;
+}
+
+figure.img-card figcaption {
+    top: 220px;
+    height: 40px;
+    color: white;
+    padding-top: 1em;
+    text-transform: uppercase;
+    background-color: #24a565;
+    width: 100%;
+}
+
+figure.img-card figcaption:hover {
+    background-color: #73c183;
+}

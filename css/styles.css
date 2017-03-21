@@ -16,6 +16,10 @@ h3 {
     margin-bottom: 7px;
 }
 
+html {
+    background-color: #fbfbfb;
+}
+
 body {
     background-color: #fff;
     font-family: gandhi-sans;
@@ -219,7 +223,6 @@ h1.product-slogan {
 
 .section-header>h2 {
     padding: 0;
-    text-transform: uppercase;
 }
 
 .section-header>span {
