@@ -75,8 +75,32 @@ a:hover {
     white-space: nowrap;
 }
 
-.header-bar-item-right i,
-.header-bar-item-center i {
+
+/* footer impl */
+
+footer {
+    padding-top: 16px;
+    background-color: #fbfbfb;
+    border: solid #f0f0f0;
+    border-width: 1px 0 0 0;
+    color: #9b9b9b;
+}
+
+footer div.info {
+    line-height: 190%;
+    margin-top: 1.5em;
+}
+
+footer div.info h5 {
+    font-weight: 600;
+}
+
+footer ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+​i.accent {
     color: #6cc5d7;
 }
 
