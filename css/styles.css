@@ -79,6 +79,7 @@ a:hover {
 /* footer impl */
 
 footer {
+    margin-top: 1em;
     padding-top: 16px;
     background-color: #fbfbfb;
     border: solid #f0f0f0;
