@@ -24,11 +24,16 @@ body {
 
 a {
     color: inherit;
+    cursor: pointer;
+    text-decoration: none !important;
+}
+
+a:hover {
+    color: #24a565;
 }
 
 .header-bar-item {
     margin: 0 0.6em;
-    cursor: pointer;
 }
 
 .page {
@@ -50,7 +55,6 @@ a {
 .header-bar-item-right {
     margin: 0em 1.6em;
     float: right;
-    cursor: pointer;
 }
 
 .header-bar-item-center {
