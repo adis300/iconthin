@@ -15,7 +15,6 @@ figure.img-box {
     display: inline-block;
     vertical-align: top;
     box-shadow: 0 0 5px #ddd;
-    margin: 1em;
 }
 
 figcaption {
@@ -108,7 +107,7 @@ figure.grad-box div {
     bottom: 0;
     width: 100%;
     height: 100%;
-    padding: 4em;
+    padding: 3em;
     text-align: right;
     background: transparent;
     background: -webkit-linear-gradient(80deg, rgba(255, 255, 255, 0.25), white);
@@ -141,8 +140,8 @@ figure.img-card {
     height: 260px;
     overflow: hidden;
     position: relative;
+    margin-bottom: 0.5em;
     box-shadow: 0 0 5px #ddd;
-    margin: 1em;
 }
 
 figure.img-card div {
