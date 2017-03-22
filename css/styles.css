@@ -79,7 +79,7 @@ a:hover {
 /* footer impl */
 
 footer {
-    margin-top: 1em;
+    margin: 1em 0 2em 0;
     padding-top: 16px;
     background-color: #fbfbfb;
     border: solid #f0f0f0;
@@ -287,4 +287,41 @@ h1.product-slogan {
     border-top: solid;
     border-width: 3px;
     border-color: #24a565;
+}
+
+#product-record {
+    padding: 2em 4em;
+    text-align: center;
+    color: white;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../img/product-record-bg.jpg);
+}
+
+#product-record i {
+    vertical-align: bottom;
+    font-size: 26px;
+}
+
+#product-record label {
+    font-weight: bold;
+    padding-top: 0.4em;
+    font-size: 30px;
+    line-height: 60%;
+}
+
+#product-record span {
+    line-height: 160%;
+}
+
+.product-logo-text .product-logo-text-light {
+    color: #24a565;
+}
+
+.product-logo-text .product-logo-text-dark {
+    color: #191718;
+}
+
+#product-desc {
+    padding: 3em 6em 0 0;
 }
