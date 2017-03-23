@@ -155,7 +155,7 @@ figure.img-card figcaption {
     top: 220px;
     height: 40px;
     color: white;
-    padding-top: 1em;
+    line-height: 40px;
     text-transform: uppercase;
     background-color: #24a565;
     width: 100%;
