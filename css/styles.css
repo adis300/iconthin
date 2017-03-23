@@ -299,6 +299,9 @@ h1.product-slogan {
     border-color: #24a565;
 }
 
+
+/* Product page impl */
+
 #product-record {
     padding: 2em 3em;
     text-align: center;
@@ -343,6 +346,9 @@ h1.product-slogan {
 .media-body p {
     padding-top: 0.4em;
 }
+
+
+/* Contact page impl */
 
 #contact-banner {
     margin: 1em 0 3em 0;
@@ -410,20 +416,21 @@ h1.product-slogan {
     position: relative;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-image: url(../img/astaxanthin-banner-bg.jpg);
+    background-image: url(../img/team-banner-bg.jpg);
     color: white;
     font-size: 15px;
     font-weight: thin;
 }
 
-#team-banner>div.team-banner-content {
-    padding: 2em 2em 4em 0;
+#team-banner>#team-banner-content {
+    margin: 5em 1em 2em 0;
     position: absolute;
     right: 0px;
-}
-
-#team-banner>div.team-banner-content>h1 {
-    padding-top: 0em;
     color: #24a565;
     text-transform: uppercase;
+}
+
+#team-banner>#team-banner-content>span {
+    font-size: 12px;
+    color: white;
 }
