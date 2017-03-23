@@ -337,7 +337,7 @@ h1.product-slogan {
 }
 
 #contact-banner {
-    margin-top: 1em;
+    margin: 1em 0 3em 0;
     padding: 4em 0 7em 0;
     text-align: center;
     color: white;
@@ -356,7 +356,7 @@ h1.product-slogan {
 
 #contact-icon-row {
     text-align: center;
-    padding-bottom: 2em;
+    padding-bottom: 3em;
 }
 
 #contact-form input,
@@ -366,6 +366,6 @@ h1.product-slogan {
 
 #contact-form input[type=submit] {
     margin: 1em 0 2em 0;
-    font-size: 16px;
+    font-size: 14px;
     padding: 0.5em 2em;
 }
