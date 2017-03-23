@@ -25,8 +25,9 @@
     position: absolute;
     background-color: #fbfbfb;
     min-width: 100px;
+    font-size: 12px;
     box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.2);
-    z-index: 100;
+    z-index: 12;
     list-style: none;
     padding-left: 0;
 }
@@ -47,7 +48,8 @@ ul.dropdown-content>li>a {
 
 /* Change color of dropdown links on hover */
 
-ul.dropdown-content>li>a:hover {
+ul.dropdown-content>li>a:hover,
+ul.dropdown-content>li>a.active {
     color: white;
     background-color: #24a565;
 }
