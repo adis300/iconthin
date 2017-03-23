@@ -399,3 +399,31 @@ h1.product-slogan {
     color: #24a565;
     text-transform: uppercase;
 }
+
+
+/* Team page impl */
+
+#team-banner {
+    margin: 1em 0 3em 0;
+    height: 280px;
+    color: white;
+    position: relative;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../img/astaxanthin-banner-bg.jpg);
+    color: white;
+    font-size: 15px;
+    font-weight: thin;
+}
+
+#team-banner>div.team-banner-content {
+    padding: 2em 2em 4em 0;
+    position: absolute;
+    right: 0px;
+}
+
+#team-banner>div.team-banner-content>h1 {
+    padding-top: 0em;
+    color: #24a565;
+    text-transform: uppercase;
+}
