@@ -108,14 +108,16 @@ i.accent {
 
 /* ​Form styles */
 
-input {
+input,
+textarea {
     color: #555;
     padding: 3px 5px;
     border: 1px solid #ccc;
     background-color: transparent;
 }
 
-input:focus {
+input:focus,
+textarea:focus {
     border-color: #999;
 }
 
@@ -355,4 +357,15 @@ h1.product-slogan {
 #contact-icon-row {
     text-align: center;
     padding-bottom: 2em;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+}
+
+#contact-form input[type=submit] {
+    margin: 1em 0 2em 0;
+    font-size: 16px;
+    padding: 0.5em 2em;
 }
