@@ -1,0 +1,217 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Iconthin</title>
+    <meta name="description" content="TODO: Optimize for search">
+    <meta name="author" content="Iconthin">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/thumbnail-v2.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+
+    <!--[if lt IE 9]>
+        <
+        script src = "" >
+    </script>
+    <![endif]-->
+</head>
+
+<body>
+    <!-- top bar impl -->
+    <section class="header-bar page">
+        <span class="header-bar-item hidden-xs">
+            <a target="_blank" href="https://facebook.com"><i class="fa fa-facebook fa-fw"></i></a>
+        </span>
+        <span class="header-bar-item hidden-xs">
+            <a target="_blank" href="https://twitter.com"><i class="fa fa-twitter fa-fw"></i></a>
+        </span>
+        <span class="header-bar-item hidden-xs">
+            <a target="_blank" href="https://instagram.com"><i class="fa fa-instagram fa-fw"></i></a>
+        </span>
+
+        <!--span class="header-bar-item-right">
+            <i class="fa fa-clock-o fa-fw"></i> Mon - Sun 8:00- 19:00
+        </span-->
+        <span class="header-bar-item-right hidden-xs">
+            <a href="tel:+1-800-800-8000"><i class="fa fa-phone fa-fw accent"></i> +1-800-800-8000</a>
+        </span>
+        <span class="header-bar-item-right hidden-xs">
+            <a target="_blank" href="https://maps.google.com"><i class="fa fa-map-marker fa-fw accent"></i> 491 Iconthin address</a>
+        </span>
+        <span class="header-bar-item-center visible-xs">
+            <a href="tel:+1-800-800-8000"><i class="fa fa-phone fa-fw accent"></i> +1-800-800-8000</a>
+        </span>
+    </section>
+    <!-- nav bar impl -->
+    <section>
+        <nav class="navbar navbar-iconthin hidden-xs page">
+            <div class="container-fluid navbar-menu">
+                <div class="navbar-header">
+                    <a class="navbar-brand" href="#">
+                        <img src="img/logo.png">
+                    </a>
+                </div>
+                <ul class="nav navbar-nav">
+                    <li class="navbar-menu-item"><a href="./">Home</a></li>
+                    <li class="navbar-menu-item"><a class="active" href="product.html">Product</a></li>
+                    <li class="navbar-menu-item"><a href="contact.html">Contact</a></li>
+                    <li class="navbar-menu-item"><a href="about.html">About</a></li>
+                </ul>
+            </div>
+        </nav>
+        <nav class="navbar navbar-inverse navbar-static-top visible-xs" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <span class="navbar-brand"><a href="./">Iconthin</a></span>
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+
+                    <ul class="nav navbar-nav">
+                        <li><a href="./">Home</a></li>
+                        <li><a href="product.html">Product</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="about.html">About</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </section>
+
+    <!-- Marker column impl -->
+    <section>
+        <div id="contact-banner">
+            <h1>Contact us</h1>
+            <span> for the solutions to keep health </span>
+        </div>
+    </section>
+
+    <!-- Contact impl-->
+    <section class="page">
+        <div class="section-header">
+            <h2>CONTACT</h2>
+            <span></span>
+        </div>
+
+        <div id="contact-icon-row" class="row">
+            <div class="col-xs-4">
+                <a target="_blank" href="https://maps.google.com">
+                    <h1><i class="fa fa-map-marker fa-fw accent"></i></h1>
+                    <span>4321 Your Address,<br> Country, Postcode</span>
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a href="tel:1-800-800-8000">
+                    <h1><i class="fa fa-phone fa-fw accent"></i></h1>
+                    <span>1-800-800-8000<br>1-800-800-8000</span>
+                </a>
+            </div>
+            <div class="col-xs-4">
+                <a href="mailto:support@iconthin.com">
+                    <h1><i class="fa fa-envelope fa-fw accent"></i></h1>
+                    <span>support@iconthin.com</span>
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- Request & consultations impl -->
+    <section class="page">
+        <div class="section-header">
+            <h2>REQUESTS &amp; CONSULTATIONS</h2>
+            <span></span>
+        </div>
+        <form>
+            <div class="row">
+                <div class="col-sm-3 col-xs-6">
+                    <input name="name" type="text" placeholder="Your name*">
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <input name="phone" type="tel" placeholder="Phone number*">
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <input name="email" type="email" placeholder="Email*">
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <input name="subject" type="text" placeholder="Subject">
+                </div>
+            </div>
+        </form>
+    </section>
+    <footer class="page">
+        <div class="row">
+            <div class="col-sm-3">
+                <img class="hidden-xs" src="img/logo.png">
+            </div>
+            <div class="col-sm-5">
+                <div class="row">
+                    <div class="col-xs-7">
+                        <div class="info">
+                            <h5>Contact us:</h5>
+                            <ul>
+                                <li>
+                                    <a target="_blank"><i class="fa fa-map-marker fa-fw accent"></i><span> 4321 Your Address, Country</span></a>
+                                </li>
+                                <li><a href="tel:+1-800-800-8000"><i class="fa fa-phone fa-fw accent"></i><span> +1-800-800-8000</span></a></li>
+                                <li><i class="fa fa-clock-o fa-fw accent"></i><span> Mon-Sun 8:00-23:00</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-xs-5">
+                        <div class="info">
+                            <h5>Links:</h5>
+                            <ul>
+                                <li><a target="_blank" href="">&gt;&nbsp&nbsp Home </a></li>
+                                <li><a target="_blank" href="">&gt;&nbsp&nbsp Procedures </a></li>
+                                <li><a target="_blank" href="">&gt;&nbsp&nbsp Blog </a></li>
+                                <li><a target="_blank" href="">&gt;&nbsp&nbsp Gallery </a></li>
+                                <li><a target="_blank" href="">&gt;&nbsp&nbsp Contacts </a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="info">
+                    <h5>Stay in touch:</h5>
+                    <form>
+                        <input type="email" name="email" placeholder="Your email" size=20>
+                        <input type="submit" value="Subscribe">
+                    </form>
+                    <h5>Follow us:</h5>
+                    <span class="header-bar-item">
+                        <a target="_blank" href="https://facebook.com"><i class="fa fa-facebook fa-fw"></i></a>
+                    </span>
+                    <span class="header-bar-item">
+                        <a target="_blank" href="https://twitter.com"><i class="fa fa-twitter fa-fw"></i></a>
+                    </span>
+                    <span class="header-bar-item">
+                        <a target="_blank" href="https://instagram.com"><i class="fa fa-instagram fa-fw"></i></a>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>

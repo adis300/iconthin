@@ -333,3 +333,26 @@ h1.product-slogan {
 .media-body p {
     padding-top: 0.4em;
 }
+
+#contact-banner {
+    margin-top: 1em;
+    padding: 4em 0 7em 0;
+    text-align: center;
+    color: white;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../img/product-record-bg.jpg);
+    color: white;
+    font-size: 15px;
+    font-weight: thin;
+}
+
+#contact-banner h1 {
+    color: #24a565;
+    text-transform: uppercase;
+}
+
+#contact-icon-row {
+    text-align: center;
+    padding-bottom: 2em;
+}
