@@ -137,6 +137,7 @@ input[type=submit] {
 }
 
 .iconthin-btn {
+    font-size: 14px;
     height: 48px;
     color: white;
     line-height: 48px;
@@ -494,5 +495,35 @@ h1.product-slogan {
 
 #team-achievements div.dimmer div.white-bg p {
     padding: 1em;
+    font-size: 12px;
+}
+
+
+/* Material page impl */
+
+#material-banner {
+    margin: 0 0 3em 0;
+    height: 280px;
+    color: white;
+    position: relative;
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    background-image: url(../img/material-banner-bg.jpg);
+    color: white;
+    font-size: 15px;
+    font-weight: thin;
+}
+
+#material-banner>#material-banner-content {
+    margin: 3em 1em 2em 0;
+    position: absolute;
+    right: 0px;
+    color: #111;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+#material-banner>#material-banner-content>span {
+    color: white;
     font-size: 12px;
 }
