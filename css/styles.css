@@ -277,12 +277,12 @@ img {
     }
 }
 
-img.product-logo {
+h2.product-logo {
+    font-size: 48px;
     z-index: 10;
     position: absolute;
-    top: 6em;
-    right: 6em;
-    height: 6em;
+    top: 1em;
+    right: 2em;
 }
 
 span.product-logo-desc {
