@@ -175,6 +175,10 @@ input[type=submit] {
     border: none;
 }
 
+.navbar-iconthin {
+    padding-bottom: 1em;
+}
+
 .navbar-inverse .navbar-toggle:focus,
 .navbar-inverse .navbar-toggle:hover {
     background-color: #24a565;
@@ -187,7 +191,7 @@ input[type=submit] {
 }
 
 .navbar-brand img {
-    margin: 0em 2em 0em -0.5em;
+    margin: 0 2em 0 -0.5em;
     height: 4em;
 }
 
@@ -425,7 +429,7 @@ h1.product-slogan {
 /* Team page impl */
 
 #team-banner {
-    margin: 1em 0 3em 0;
+    margin: 0 0 3em 0;
     height: 280px;
     color: white;
     position: relative;
