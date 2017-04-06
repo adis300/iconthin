@@ -32,7 +32,7 @@ body {
 }
 
 p {
-    padding: 0.2em;
+    padding: 3px;
     text-align: justify;
     text-justify: inter-word;
 }
@@ -48,7 +48,7 @@ a:hover {
 }
 
 .header-bar-item {
-    margin: 0 0.6em;
+    margin: 0 8px;
 }
 
 .page {
@@ -106,8 +106,8 @@ a:hover {
 }
 
 .header-bar {
-    padding-top: 0.8em;
-    padding-bottom: 0.8em;
+    padding-top: 10px;
+    padding-bottom: 10px;
     background-color: #fbfbfb;
     border: solid #f0f0f0;
     border-width: 0 0 1px 0;
@@ -117,12 +117,12 @@ a:hover {
 }
 
 .header-bar-item-right {
-    margin: 0em 1.6em;
+    margin: 0 20px;
     float: right;
 }
 
 .header-bar-item-center {
-    margin: 0em 2em;
+    margin: 0 24px;
     float: center;
     cursor: pointer;
     white-space: nowrap;
@@ -132,7 +132,7 @@ a:hover {
 /* footer impl */
 
 footer {
-    margin: 0 0 2em 0;
+    margin: 0 0 24px 0;
     padding-top: 16px;
     background-color: #fbfbfb;
     border: solid #f0f0f0;
@@ -142,7 +142,7 @@ footer {
 
 footer div.info {
     line-height: 190%;
-    margin-top: 1.5em;
+    margin-top: 16px;
 }
 
 footer div.info h5 {
@@ -226,7 +226,7 @@ input[type=submit] {
 }
 
 .navbar-iconthin {
-    padding-bottom: 1em;
+    padding-bottom: 12px;
 }
 
 .navbar-inverse .navbar-toggle:focus,
@@ -241,7 +241,7 @@ input[type=submit] {
 }
 
 .navbar-brand img {
-    margin: 0 2em 0 -0.5em;
+    margin: 0 24px 0 -10px;
     height: 4em;
 }
 
@@ -251,7 +251,7 @@ input[type=submit] {
     font-weight: thin;
     color: #24a565;
     background-color: inherit;
-    margin: 3.2em 1.2em 0 1.2em;
+    margin: 48px 16px 0 16px;
 }
 
 .nav>li.navbar-menu-item>a.active {
@@ -259,14 +259,14 @@ input[type=submit] {
 }
 
 .nav>li.navbar-menu-item>a {
-    padding: 0.1em 0.4em;
+    padding: 2px 4px;
     border-bottom: solid;
     border-width: 3px;
     border-color: white;
 }
 
 .nav>li.navbar-menu-item>a {
-    padding: 0.1em 0.4em;
+    padding: 2px 4px;
     border-bottom: solid;
     border-width: 3px;
     border-color: white;
@@ -283,8 +283,6 @@ input[type=submit] {
 
 #home-banner {
     position: relative;
-    padding-left: 4em;
-    padding-right: 3em;
 }
 
 .carousel {
@@ -330,8 +328,8 @@ h2.product-logo {
     font-size: 48px;
     z-index: 10;
     position: absolute;
-    top: 1.3em;
-    right: 2em;
+    top: 64px;
+    right: 88px;
 }
 
 span.product-logo-desc {
@@ -339,16 +337,16 @@ span.product-logo-desc {
     font-size: 15px;
     z-index: 11;
     position: absolute;
-    top: 9.6em;
-    right: 8em;
+    top: 140px;
+    right: 120px;
 }
 
 h1.product-slogan {
     color: #444;
     z-index: 11;
     position: absolute;
-    top: 4.5em;
-    right: 3em;
+    top: 150px;
+    right: 88px;
 }
 
 @media only screen and (max-width: 768px) {
@@ -372,7 +370,7 @@ h1.product-slogan {
 }
 
 .section-header>span {
-    padding: 0 4em;
+    padding: 0 48px;
     border-top: solid;
     border-width: 3px;
     border-color: #24a565;
@@ -382,7 +380,7 @@ h1.product-slogan {
 /* Product page impl */
 
 #product-record {
-    padding: 2em 3em;
+    padding: 32px 32px;
     text-align: center;
     color: white;
     background-size: 100% auto;
@@ -397,7 +395,7 @@ h1.product-slogan {
 
 #product-record label {
     font-weight: bold;
-    padding-top: 0.4em;
+    padding-top: 6px;
     font-size: 30px;
     line-height: 60%;
 }
@@ -415,12 +413,16 @@ h1.product-slogan {
 }
 
 #product-desc {
-    padding: 3em 6em 0 0;
+    padding: 36px 72px 0 0;
 }
 
 @media only screen and (max-width: 768px) {
     #product-desc {
-        padding: 3em 2em 0 2em;
+        padding: 36px 24px 0 24px;
+    }
+    #product-desc>h4 {
+        text-align: center;
+        padding: 36px 24px 0 24px;
     }
 }
 
@@ -429,15 +431,15 @@ h1.product-slogan {
 }
 
 .media-body p {
-    padding-top: 0.4em;
+    padding-top: 4px;
 }
 
 
 /* Contact page impl */
 
 #contact-banner {
-    margin: 1em 0 3em 0;
-    padding: 4em 0 7em 0;
+    margin: 0 0 48px 0;
+    padding: 64px 0 110px 0;
     text-align: center;
     color: white;
     background-size: 100% auto;
@@ -455,7 +457,7 @@ h1.product-slogan {
 
 #contact-icon-row {
     text-align: center;
-    padding-bottom: 3em;
+    padding-bottom: 36px;
 }
 
 #contact-form input,
@@ -464,17 +466,17 @@ h1.product-slogan {
 }
 
 #contact-form input[type=submit] {
-    margin: 1em 0 2em 0;
+    margin: 12px 0 24px 0;
     font-size: 14px;
-    padding: 0.5em 2em;
+    padding: 6px 24px;
 }
 
 
 /* Astaxanthin page impl */
 
 #astaxanthin-banner {
-    margin: 1em 0 3em 0;
-    padding: 3em 6em 8em 0;
+    margin: 0 0 64px 0;
+    padding: 48px 96px 120px 0;
     text-align: right;
     color: white;
     background-size: 100% auto;
@@ -486,7 +488,7 @@ h1.product-slogan {
 }
 
 #astaxanthin-banner h1 {
-    padding-top: 0em;
+    padding-top: 0;
     color: #24a565;
     text-transform: uppercase;
 }
@@ -495,7 +497,7 @@ h1.product-slogan {
 /* Team page impl */
 
 #team-banner {
-    margin: 0 0 3em 0;
+    margin: 0 0 64px 0;
     height: 280px;
     color: white;
     position: relative;
@@ -508,7 +510,7 @@ h1.product-slogan {
 }
 
 #team-banner>#team-banner-content {
-    margin: 5em 1em 2em 0;
+    margin: 144px 24px 48px 0;
     position: absolute;
     right: 0px;
     color: #24a565;
@@ -521,7 +523,7 @@ h1.product-slogan {
 }
 
 #team-achievements {
-    margin: 1em 0 0 0;
+    margin: 12px 0 0 0;
     position: relative;
     background-size: 100% auto;
     background-repeat: no-repeat;
@@ -531,7 +533,7 @@ h1.product-slogan {
 }
 
 #team-achievements>div.dimmer {
-    padding: 1em 0;
+    padding: 12px 0;
     width: 100%;
     height: 100%;
     z-index: 1;
@@ -559,7 +561,7 @@ h1.product-slogan {
 }
 
 #team-achievements div.dimmer div.white-bg p {
-    padding: 1em;
+    padding: 12px;
     font-size: 12px;
 }
 
@@ -567,7 +569,7 @@ h1.product-slogan {
 /* Material page impl */
 
 #material-banner {
-    margin: 0 0 3em 0;
+    margin: 0 0 64px 0;
     height: 280px;
     color: white;
     position: relative;
@@ -580,7 +582,7 @@ h1.product-slogan {
 }
 
 #material-banner>#material-banner-content {
-    margin: 3em 1em 2em 0;
+    margin: 84px 28px 56px 0;
     position: absolute;
     right: 0px;
     color: #111;
