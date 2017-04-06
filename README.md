@@ -5,4 +5,11 @@ env GOOS=windows GOARCH=386 go build -v iconthin
 ```
 
 # Connect
-ssh -i "coturn-key.pem" ec2-user@ec2-52-10-224-174.us-west-2.compute.amazonaws.com
+```
+chmod 400 iconthin-key.pem
+ssh -i "iconthin-key.pem" ec2-user@52.60.247.66
+```
+# Deploy to instance
+```
+scp -i iconthin-key.pem release.zip ec2-user@52.60.247.66:~/iconthin/release.zip
+```
