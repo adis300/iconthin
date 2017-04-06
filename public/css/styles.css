@@ -56,10 +56,17 @@ a:hover {
     padding-right: 240px;
 }
 
-@media only screen and (max-width: 1200px) {
+@media only screen and (max-width: 1440px) {
     .page {
-        padding-left: 120px;
-        padding-right: 120px;
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+}
+
+@media only screen and (max-width: 1080px) {
+    .page {
+        padding-left: 100px;
+        padding-right: 100px;
     }
 }
 
@@ -70,10 +77,31 @@ a:hover {
     }
 }
 
+@media only screen and (max-width: 768px) {
+    .page {
+        padding-left: 120px;
+        padding-right: 120px;
+    }
+}
+
+@media only screen and (max-width: 576px) {
+    .page {
+        padding-left: 80px;
+        padding-right: 80px;
+    }
+}
+
 @media only screen and (max-width: 520px) {
     .page {
-        padding-left: 20px;
-        padding-right: 20px;
+        padding-left: 60px;
+        padding-right: 60px;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .page {
+        padding-left: 32px;
+        padding-right: 32px;
     }
 }
 
@@ -323,6 +351,16 @@ h1.product-slogan {
     right: 3em;
 }
 
+@media only screen and (max-width: 768px) {
+    h2.product-logo,
+    span.product-logo-desc,
+    h1.product-slogan {
+        width: 100%;
+        right: 0px;
+        text-align: center;
+    }
+}
+
 .section-header {
     width: 100%;
     text-align: center;
@@ -378,6 +416,12 @@ h1.product-slogan {
 
 #product-desc {
     padding: 3em 6em 0 0;
+}
+
+@media only screen and (max-width: 768px) {
+    #product-desc {
+        padding: 3em 2em 0 2em;
+    }
 }
 
 .media-left i {
