@@ -298,6 +298,11 @@ input[type=submit] {
     height: 400px;
 }
 
+.carousel .item {
+    max-width: 800px;
+    height: 400px;
+}
+
 img {
     max-width: 100%;
     width: auto 9;
