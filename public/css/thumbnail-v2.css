@@ -156,6 +156,7 @@ figure.img-card div {
 figure.img-card img {
     min-width: 100%;
     min-height: 100%;
+    max-height: 140%;
 }
 
 figure.img-card figcaption {
