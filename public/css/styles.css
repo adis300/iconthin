@@ -499,7 +499,6 @@ h1.product-slogan {
 /* Team page impl */
 
 #team-banner {
-    margin: 0 0 64px 0;
     height: 280px;
     color: white;
     position: relative;
@@ -511,15 +510,19 @@ h1.product-slogan {
     font-weight: thin;
 }
 
-#team-banner>#team-banner-content {
-    margin: 144px 24px 48px 0;
-    position: absolute;
-    right: 0px;
+#team-banner>.page>p {
+    width: 100%;
+    padding-top: 128px;
+}
+
+#team-banner-content {
+    float: right;
+    display: inline-block;
     color: #24a565;
     text-transform: uppercase;
 }
 
-#team-banner>#team-banner-content>span {
+#team-banner-content>span {
     font-size: 12px;
     color: white;
 }
