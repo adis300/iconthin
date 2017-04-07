@@ -445,7 +445,7 @@ h1.product-slogan {
     padding: 64px 0 110px 0;
     text-align: center;
     color: white;
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/product-record-bg.jpg);
     color: white;
@@ -482,7 +482,7 @@ h1.product-slogan {
     padding: 48px 96px 120px 0;
     text-align: right;
     color: white;
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/astaxanthin-banner-bg.jpg);
     color: white;
