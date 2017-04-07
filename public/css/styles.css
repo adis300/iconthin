@@ -578,10 +578,10 @@ h1.product-slogan {
 
 #material-banner {
     margin: 0 0 64px 0;
-    height: 280px;
+    height: 260px;
     color: white;
     position: relative;
-    background-size: 100% auto;
+    background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/material-banner-bg.jpg);
     color: white;
@@ -589,17 +589,15 @@ h1.product-slogan {
     font-weight: thin;
 }
 
-#material-banner>#material-banner-content {
-    margin: 84px 28px 56px 0;
-    position: absolute;
-    right: 0px;
+#material-banner-content {
+    padding-right: 6px;
     color: #111;
     text-align: right;
     font-weight: 500;
     text-transform: uppercase;
 }
 
-#material-banner>#material-banner-content>span {
+#material-banner-content>span {
     color: white;
     font-size: 12px;
 }
