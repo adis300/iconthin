@@ -477,8 +477,9 @@ h1.product-slogan {
 /* Astaxanthin page impl */
 
 #astaxanthin-banner {
-    margin: 0 0 64px 0;
-    padding: 48px 96px 120px 0;
+    margin-bottom: 64px;
+    padding-top: 48px;
+    padding-bottom: 96px;
     text-align: right;
     color: white;
     background-size: cover;
@@ -490,7 +491,6 @@ h1.product-slogan {
 }
 
 #astaxanthin-banner h1 {
-    padding-top: 0;
     color: #24a565;
     text-transform: uppercase;
 }
@@ -501,7 +501,6 @@ h1.product-slogan {
 #team-banner {
     height: 280px;
     color: white;
-    position: relative;
     background-size: cover;
     background-repeat: no-repeat;
     background-image: url(../img/team-banner-bg.jpg);
