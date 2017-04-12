@@ -193,6 +193,16 @@ input[type=submit] {
     width: 100%;
 }
 
+.iconthin-btn-sm {
+    font-size: 14px;
+    height: 32px;
+    color: white;
+    line-height: 32px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #24a565;
+}
+
 
 /* nav bar classes */
 
@@ -493,6 +503,24 @@ h1.product-slogan {
 #astaxanthin-banner h1 {
     color: #24a565;
     text-transform: uppercase;
+}
+
+#astaxanthin-learn-more {
+    position: relative;
+    height: 320px;
+    line-height: 40px;
+    color: #24a565;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url(../img/astaxanthin-learn-more-bg.jpg);
+    font-size: 20px;
+    font-weight: thin;
+}
+
+#astaxanthin-learn-more>div {
+    top: 150px;
+    position: absolute;
+    right: 0;
 }
 
 

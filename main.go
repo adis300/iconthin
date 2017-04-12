@@ -13,6 +13,7 @@ var contactView []byte
 var teamView []byte
 var materialView []byte
 var astaxanthinView []byte
+var astaxanthinHBView []byte
 
 func main() {
 	time := strconv.FormatInt(time.Now().Unix(), 10)
@@ -25,6 +26,7 @@ func main() {
 	teamView = loadView("team")
 	materialView = loadView("material")
 	astaxanthinView = loadView("astaxanthin")
+	astaxanthinHBView = loadView("astaxanthin-health-benefits")
 
 	http.Handle("/js/", http.StripPrefix("/js", http.FileServer(http.Dir(relativePath+"/public/js"))))
 	http.Handle("/css/", http.StripPrefix("/css", http.FileServer(http.Dir(relativePath+"/public/css"))))
@@ -39,6 +41,7 @@ func main() {
 	http.HandleFunc("/team", teamHandler)
 	http.HandleFunc("/material", materialHandler)
 	http.HandleFunc("/astaxanthin", astaxanthinHandler)
+	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
 	http.HandleFunc("/contact", contactHandler)
 
 	log.Println("Starting iconthin.com application on " + PORT)
@@ -71,4 +74,9 @@ func astaxanthinHandler(w http.ResponseWriter, r *http.Request) {
 func contactHandler(w http.ResponseWriter, r *http.Request) {
 	// w.Write(loader.LoadView("contact"))
 	w.Write(contactView)
+}
+
+func astaxanthinHBHandler(w http.ResponseWriter, r *http.Request) {
+	// w.Write(loader.LoadView("astaxanthin-health-benefits"))
+	w.Write(astaxanthinHBView)
 }

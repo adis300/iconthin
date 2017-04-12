@@ -13,3 +13,6 @@ ssh -i "iconthin-key.pem" ec2-user@52.60.247.66
 ```
 scp -i iconthin-key.pem release.zip ec2-user@52.60.247.66:~/iconthin/release.zip
 ```
+
+# Kill application on port
+sudo lsof -n -i :80 | grep LISTEN
