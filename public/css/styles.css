@@ -21,6 +21,8 @@ h3 {
 }
 
 html {
+    max-width: 100%;
+    overflow-x: hidden;
     background-color: #fbfbfb;
 }
 
@@ -29,6 +31,8 @@ body {
     background-color: #fff;
     font-family: gandhi-sans;
     font-size: 12px;
+    max-width: 100%;
+    overflow-x: hidden;
 }
 
 p {
