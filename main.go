@@ -44,9 +44,17 @@ func main() {
 	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
 	http.HandleFunc("/contact", contactHandler)
 
-	log.Println("Starting iconthin.com application on " + PORT)
-	if err := http.ListenAndServe(PORT, nil); err != nil {
-		log.Fatal("Fatal error happened server on port" + PORT)
+	go func() {
+		log.Println("Starting iconthin.com application on" + PORT)
+		// httpErr := http.ListenAndServe(PORT, secureRedirectHandler(http.StatusFound))
+		httpErr := http.ListenAndServe(PORT, nil)
+		if httpErr != nil {
+			panic("ERROR: " + httpErr.Error())
+		}
+	}()
+	log.Println("APP: Securely server HTTPs on port:" + PORT_SECURE)
+	if err := http.ListenAndServeTLS(PORT_SECURE, "ssl/cert.pem", "ssl/privkey-rsa.pem", nil); err != nil {
+		log.Fatal("ERROR: ListenAndServeTLS:", err)
 	}
 }
 
