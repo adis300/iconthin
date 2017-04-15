@@ -169,6 +169,6 @@ figure.img-card figcaption {
     width: 100%;
 }
 
-figure.img-card figcaption:hover {
+figure.img-card figcaption.highlight:hover {
     background-color: #73c183;
 }

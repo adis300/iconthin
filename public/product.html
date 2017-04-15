@@ -144,19 +144,19 @@
             <div class="row">
                 <div class="col-sm-3 col-xs-6">
                     <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label>110</label><br><span>protected</span>
+                    <label id="num-label-0">0</label><br><span>protected</span>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label>110</label><br><span>protected</span>
+                    <label id="num-label-1">0</label><br><span>protected</span>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label>110</label><br><span>protected</span>
+                    <label id="num-label-2">0</label><br><span>protected</span>
                 </div>
                 <div class="col-sm-3 col-xs-6">
                     <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label>110</label><br><span>protected</span>
+                    <label id="num-label-3">0</label><br><span>protected</span>
                 </div>
             </div>
         </div>
@@ -377,6 +377,24 @@
             r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
         })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+    <script>
+        var elementBounds = [100, 110, 129, 50];
+        var timeInterval = 20;
+
+        function incrementAnimated(element, bound) {
+            setTimeout(function() {
+                var num = parseInt(element.innerHTML);
+                if (num < bound) {
+                    num += 1;
+                    element.innerHTML = num;
+                }
+                incrementAnimated(element, bound);
+            });
+        }
+        for (i = 0; i < 4; i++) {
+            incrementAnimated(document.getElementById("num-label-" + i), elementBounds[i]);
+        }
     </script>
 </body>
 
