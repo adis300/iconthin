@@ -27,10 +27,10 @@ html {
 }
 
 body {
-    color: #555;
+    color: #666;
     background-color: #fff;
     font-family: gandhi-sans;
-    font-size: 12px;
+    font-size: 14px;
     max-width: 100%;
     overflow-x: hidden;
 }
@@ -603,7 +603,6 @@ h1.product-slogan {
 
 #team-achievements div.dimmer div.white-bg p {
     padding: 12px;
-    font-size: 12px;
 }
 
 
