@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"log"
 	"net/http"
 	"strconv"
@@ -17,8 +18,15 @@ var teamView []byte
 var materialView []byte
 var astaxanthinView []byte
 var astaxanthinHBView []byte
+var db *gorm.DB = nil
 
 func main() {
+
+	dbname := flag.String("dbname", DB_NAME, "The DB name this server runs on.")
+	dbuname := flag.String("dbuname", DB_UNAME, "The user name of the DB.")
+	dbpswd := flag.String("dbpswd", DB_PSWD, "Password of the DB.")
+	flag.Parse()
+
 	time := strconv.FormatInt(time.Now().Unix(), 10)
 	log.Println("Starting server at epoch time: " + time)
 	relativePath := getRelativePath()
@@ -46,14 +54,16 @@ func main() {
 	http.HandleFunc("/astaxanthin", astaxanthinHandler)
 	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
 	http.HandleFunc("/contact", contactHandler)
+	http.HandleFunc("/subscribe", subscribeHandler)
 
 	// Initialize database
-	args := "host=localhost user=" + DB_UNAME + " dbname=" + DB_NAME + " sslmode=disable password=" + DB_PSWD
-	db, err := gorm.Open("postgres", args)
-	if err != nil {
+	args := "host=localhost user=" + *dbuname + " dbname=" + *dbname + " sslmode=disable password=" + *dbpswd
+	var err error
+	if db, err = gorm.Open("postgres", args); err != nil {
 		log.Println(err)
 		panic("ERROR: Failed to initialize database")
 	}
+	createTables()
 	defer db.Close()
 
 	go func() {
@@ -65,7 +75,7 @@ func main() {
 		}
 	}()
 	log.Println("APP: Securely server HTTPs on port:" + PORT_SECURE)
-	if err := http.ListenAndServeTLS(PORT_SECURE, "ssl/cert.pem", "ssl/privkey-rsa.pem", nil); err != nil {
+	if err = http.ListenAndServeTLS(PORT_SECURE, "ssl/cert.pem", "ssl/privkey-rsa.pem", nil); err != nil {
 		log.Fatal("ERROR: ListenAndServeTLS:", err)
 	}
 }

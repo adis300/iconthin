@@ -38,4 +38,5 @@ psql -U postgres
 
 CREATE USER iconthin WITH PASSWORD '$password';
 CREATE DATABASE $dbname;
+GRANT all privileges on database iconthin to iconthin
 ```
