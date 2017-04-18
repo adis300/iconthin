@@ -5,6 +5,9 @@ import (
 	"net/http"
 	"strconv"
 	"time"
+
+	"github.com/jinzhu/gorm"
+	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
 
 var homeView []byte
@@ -43,6 +46,15 @@ func main() {
 	http.HandleFunc("/astaxanthin", astaxanthinHandler)
 	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
 	http.HandleFunc("/contact", contactHandler)
+
+	// Initialize database
+	args := "host=localhost user=" + DB_UNAME + " dbname=" + DB_NAME + " sslmode=disable password=" + DB_PSWD
+	db, err := gorm.Open("postgres", args)
+	if err != nil {
+		log.Println(err)
+		panic("ERROR: Failed to initialize database")
+	}
+	defer db.Close()
 
 	go func() {
 		log.Println("Starting iconthin.com application on" + PORT)

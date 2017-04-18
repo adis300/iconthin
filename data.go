@@ -3,7 +3,10 @@ package main
 import (
 	"net/http"
 	"strings"
-)
+	/*
+		"github.com/jinzhu/gorm"
+		_ "github.com/jinzhu/gorm/dialects/postgres"
+	*/)
 
 // Subscriber defines the subscriber object
 type Subscriber struct {
@@ -17,8 +20,8 @@ type Feedback struct {
 	Name      string `json:"name"`
 	Phone     string `json:"phone"`
 	Email     string `json:"email"`
-	Subject   string `json:subject`
-	Body      string `json:body`
+	Subject   string `json:"subject"`
+	Body      string `json:"body"`
 	Active    bool   `json:"active"`
 	Timestamp int64  `json:"timestamp"`
 }
