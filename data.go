@@ -71,12 +71,13 @@ func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 		body := strings.ToLower(strings.TrimSpace(r.FormValue("body")))
 
 		if subject != "" || body != "" {
-			print(email)
-			print(name)
-			print(phone)
-			print(subject)
-			print(body)
+			var feedback = &Feedback{Email: email, Name: name, Phone: phone, Subject: subject, Body: body, Active: true, Timestamp: time.Now().Unix()}
+			if err := db.Create(feedback); err != nil {
+				log.Println("WARNING:Email is already subscribed:" + email)
+			}
+			sendResponse(w, &Response{Data: "Feedback submitted."})
 		}
+	} else if r.Method == "DELETE" {
 	} else {
 		httpError400(w, http.StatusMethodNotAllowed)
 	}
