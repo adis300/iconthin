@@ -86,15 +86,20 @@ func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 
 func adminSubscriberHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		var subscribers = []*Subscriber{}
-		if err := db.Find(&subscribers); err != nil {
-			httpError500(w, http.StatusInternalServerError)
-			return
+		token := r.Header.Get("Auth")
+		if validateToken(token) {
+			var subscribers = []*Subscriber{}
+			if err := db.Find(&subscribers); err != nil {
+				httpError500(w, http.StatusInternalServerError)
+				return
+			}
+			sendResponse(w, &Response{Data: subscribers})
+		} else {
+			httpSessionExpired(w)
 		}
-		sendResponse(w, &Response{Data: subscribers})
 	} else if r.Method == "DELETE" {
 		email := r.URL.Query().Get("email")
-		token := r.URL.Query().Get("token")
+		token := r.Header.Get("Auth")
 		if validateToken(token) {
 			db.Where("email = ?", email).Delete(&Subscriber{})
 		} else {
@@ -107,15 +112,20 @@ func adminSubscriberHandler(w http.ResponseWriter, r *http.Request) {
 
 func adminFeedbackHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
-		var feedbacks = []*Feedback{}
-		if err := db.Find(&feedbacks); err != nil {
-			httpError500(w, http.StatusInternalServerError)
-			return
+		token := r.Header.Get("Auth")
+		if validateToken(token) {
+			var feedbacks = []*Feedback{}
+			if err := db.Find(&feedbacks); err != nil {
+				httpError500(w, http.StatusInternalServerError)
+				return
+			}
+			sendResponse(w, &Response{Data: feedbacks})
+		} else {
+			httpSessionExpired(w)
 		}
-		sendResponse(w, &Response{Data: feedbacks})
 	} else if r.Method == "DELETE" {
 		id := r.URL.Query().Get("id")
-		token := r.URL.Query().Get("token")
+		token := r.Header.Get("Auth")
 		if validateToken(token) {
 			if idInt, err := strconv.Atoi(id); err == nil {
 				db.Where("id = ?", uint(idInt)).Delete(&Feedback{})
