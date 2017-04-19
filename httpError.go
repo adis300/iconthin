@@ -107,3 +107,8 @@ func httpErrorCustom(w http.ResponseWriter, status int, errorContent string) {
 	w.WriteHeader(status)
 	fmt.Fprint(w, errorContent)
 }
+
+func httpSessionExpired(w http.ResponseWriter) {
+	w.WriteHeader(401)
+	w.Write([]byte("SESSION_EXPIRE"))
+}

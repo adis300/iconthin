@@ -3,6 +3,7 @@ package main
 import (
 	"log"
 	"net/http"
+	"strconv"
 	"strings"
 	"time"
 
@@ -58,6 +59,7 @@ func subscribeHandler(w http.ResponseWriter, r *http.Request) {
 			httpError400(w, http.StatusBadRequest)
 		}
 	} else {
+		log.Println("DEBUG:token:" + currentToken + ":" + strconv.Itoa(sessionCounter))
 		httpError400(w, http.StatusMethodNotAllowed)
 	}
 }
@@ -76,8 +78,18 @@ func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 				log.Println("WARNING:Email is already subscribed:" + email)
 			}
 			sendResponse(w, &Response{Data: "Feedback submitted."})
+			return
 		}
 	} else if r.Method == "DELETE" {
+		id := r.URL.Query().Get("id")
+		token := r.URL.Query().Get("token")
+		if validateToken(token) {
+			if idInt, err := strconv.Atoi(id); err == nil {
+				db.Where("id = ?", uint(idInt)).Delete(&Feedback{})
+			}
+		} else {
+			httpSessionExpired(w)
+		}
 	} else {
 		httpError400(w, http.StatusMethodNotAllowed)
 	}

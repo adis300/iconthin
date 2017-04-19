@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"golang.org/x/crypto/scrypt"
+	"log"
 	"net/http"
 	"strings"
 	"text/template"
@@ -32,4 +34,23 @@ func (rh *secureHandler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		note := "<a href=\"" + template.HTMLEscapeString(newURL) + "\">" + http.StatusText(rh.code) + "</a>.\n"
 		fmt.Fprintln(w, note)
 	}
+}
+
+var hashSalt = []byte("iconthin!")
+
+const (
+	n      = 8192 // Default 16384
+	r      = 8    // Default 8
+	p      = 1    // Default 1
+	keyLen = 16   // Default 32
+)
+
+func hash(text string) string {
+	keyDer, err := scrypt.Key([]byte(text), hashSalt, n, r, p, keyLen)
+	if err != nil {
+		log.Fatal("Failed to hash text:" + text)
+		log.Println(err.Error())
+		return ""
+	}
+	return ADEncoding.EncodeToString(keyDer)
 }

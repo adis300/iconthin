@@ -1,0 +1,65 @@
+<!doctype html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--title>Null title admin</title-->
+    <meta name="description" content="TODO: Optimize for search">
+    <meta name="author" content="Iconthin">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/element-ui.css">
+
+    <script src="js/vendor/modernizr.js"></script>
+    <script src="js/vendor/jquery.js"></script>
+    <script src="js/vendor/vue.min.js"></script>
+    <script src="js/vendor/element-ui.js"></script>
+    <style>
+        .bg-purple {
+            background: #d3dce6;
+        }
+        
+        .grid-content {
+            min-height: 36px;
+        }
+    </style>
+    <!--[if lt IE 9]>
+        <
+        script src = "" >
+    </script>
+    <![endif]-->
+</head>
+
+<body>
+    <div id="admin-app">
+        <el-row :gutter="20" v-if="loginVisible">
+            <el-col :span="8">
+                <div class="grid-content"></div>
+            </el-col>
+            <el-col :span="8">
+                <div class="grid-content">
+                    <form id="login-form">
+                        <el-input placeholder="Username" v-model="uname"></el-input>
+                        <br>
+                        <el-input placeholder="Password" v-model="pswd"></el-input>
+                    </form>
+                    <el-button @click="signin" item-width="100%">Sign in</el-button>
+                    <el-dialog v-model="alertVisible" title="Error">
+                        <p>{{alertContent}}</p>
+                    </el-dialog>
+                </div>
+            </el-col>
+            <el-col :span="8">
+                <div class="grid-content"></div>
+            </el-col>
+        </el-row>
+        <el-row :gutter="20" v-if="!loginVisible">
+            Test
+        </el-row>
+    </div>
+</body>
+<script src="js/admin.js"></script>
+
+</html>

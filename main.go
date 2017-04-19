@@ -65,7 +65,8 @@ func main() {
 	}
 	createTables()
 	defer db.Close()
-
+	// Start session update task
+	startAdminSessionTokenUpdateTask()
 	go func() {
 		log.Println("Starting iconthin.com application on" + PORT)
 		// httpErr := http.ListenAndServe(PORT, secureRedirectHandler(http.StatusFound))
