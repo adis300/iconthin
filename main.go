@@ -56,7 +56,7 @@ func main() {
 	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/subscribe", subscribeHandler)
 	http.HandleFunc("/admin/signin", adminSignInHandler)
-
+	http.HandleFunc("/admin/subscriber", adminSubscriberHandler)
 	// Initialize database
 	args := "host=localhost user=" + *dbuname + " dbname=" + *dbname + " sslmode=disable password=" + *dbpswd
 	var err error

@@ -59,7 +59,6 @@ func subscribeHandler(w http.ResponseWriter, r *http.Request) {
 			httpError400(w, http.StatusBadRequest)
 		}
 	} else {
-		log.Println("DEBUG:token:" + currentToken + ":" + strconv.Itoa(sessionCounter))
 		httpError400(w, http.StatusMethodNotAllowed)
 	}
 }
@@ -80,6 +79,40 @@ func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 			sendResponse(w, &Response{Data: "Feedback submitted."})
 			return
 		}
+	} else {
+		httpError400(w, http.StatusMethodNotAllowed)
+	}
+}
+
+func adminSubscriberHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		var subscribers = []*Subscriber{}
+		if err := db.Find(&subscribers); err != nil {
+			httpError500(w, http.StatusInternalServerError)
+			return
+		}
+		sendResponse(w, &Response{Data: subscribers})
+	} else if r.Method == "DELETE" {
+		email := r.URL.Query().Get("email")
+		token := r.URL.Query().Get("token")
+		if validateToken(token) {
+			db.Where("email = ?", email).Delete(&Subscriber{})
+		} else {
+			httpSessionExpired(w)
+		}
+	} else {
+		httpError400(w, http.StatusMethodNotAllowed)
+	}
+}
+
+func adminFeedbackHandler(w http.ResponseWriter, r *http.Request) {
+	if r.Method == "GET" {
+		var feedbacks = []*Feedback{}
+		if err := db.Find(&feedbacks); err != nil {
+			httpError500(w, http.StatusInternalServerError)
+			return
+		}
+		sendResponse(w, &Response{Data: feedbacks})
 	} else if r.Method == "DELETE" {
 		id := r.URL.Query().Get("id")
 		token := r.URL.Query().Get("token")
@@ -91,6 +124,7 @@ func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 			httpSessionExpired(w)
 		}
 	} else {
+		log.Println("DEBUG:token:" + currentToken + ":" + strconv.Itoa(sessionCounter))
 		httpError400(w, http.StatusMethodNotAllowed)
 	}
 }
