@@ -55,6 +55,7 @@ func main() {
 	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
 	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/subscribe", subscribeHandler)
+	http.HandleFunc("/admin/signin", adminSignInHandler)
 
 	// Initialize database
 	args := "host=localhost user=" + *dbuname + " dbname=" + *dbname + " sslmode=disable password=" + *dbpswd

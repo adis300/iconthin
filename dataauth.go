@@ -5,4 +5,4 @@ const DB_UNAME = "iconthin"
 const DB_PSWD = "iconthin"
 
 const ADM_UNAME = "iconthin"
-const ADM_PSWD = "BkZXPhgTHMhw3Vb40CCOsA"
+const ADM_PSWD = "GSixTeEjeSLKgd7EsuUrnH"

@@ -7,7 +7,7 @@ import (
 
 // 33! 35# 36$ 37% 38& 42* 43+ 44, 45- 46. 58: 63? 64@ 94^ 95_ 126~
 // Only allows the following chars !#$%&*+,-.:?@^_~
-var passwordSpecialChars = []byte{33, 35, 36, 37, 38, 42, 43, 44, 45, 46, 58, 63, 64, 94, 95, 126}
+var passwordSpecialChars = []byte{33, 35, 36, 37, 38, 42, 43, 44, 45, 46, 58, 63, 64, 94, 100, 137, 95, 126}
 var emailRegex = regexp.MustCompile(`^([\w\.\_]{1,32})@(\w{2,32})\.(\w{1,20}\.)?([\w]{2,8})$`)
 
 // validateEmail checks if an email is valid

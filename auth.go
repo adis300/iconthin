@@ -9,21 +9,19 @@ import (
 
 var sessionCounter = 0
 
-const sessionAvailableMunutes = 20
+const sessionAvailableMunutes = 10
 
 var currentToken = UUIDGen()
 
-func adminLoginHandler(w http.ResponseWriter, r *http.Request) {
+func adminSignInHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		username := strings.ToLower(strings.TrimSpace(r.FormValue("uname")))
 		pswd := strings.TrimSpace(r.FormValue("pswd"))
-		if validateUsername(username) && validatePassword(pswd) {
-			if username == ADM_UNAME && hash(pswd) == ADM_PSWD {
-				sessionCounter = 0
-				currentToken = UUIDGen()
-				w.Write([]byte(currentToken))
-				return
-			}
+		if username == ADM_UNAME && hash(pswd) == ADM_PSWD {
+			sessionCounter = 0
+			currentToken = UUIDGen()
+			w.Write([]byte(currentToken))
+			return
 		}
 		httpError400(w, http.StatusBadRequest)
 	} else {
@@ -44,7 +42,7 @@ func startAdminSessionTokenUpdateTask() {
 				sessionCounter = 0
 				currentToken = UUIDGen()
 			}
-			time.Sleep(time.Second * 1)
+			time.Sleep(time.Minute * 1)
 		}
 	}()
 }
