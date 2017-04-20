@@ -17,12 +17,13 @@
     <script src="js/vendor/vue.min.js"></script>
     <script src="js/vendor/element-ui.js"></script>
     <style>
-        .bg-purple {
-            background: #d3dce6;
-        }
-        
         .grid-content {
             min-height: 36px;
+        }
+        
+        .sidebar {
+            min-height: 500px;
+            background-color: #dde;
         }
     </style>
     <!--[if lt IE 9]>
@@ -40,12 +41,14 @@
             </el-col>
             <el-col :span="8">
                 <div class="grid-content">
+                    <h1><br>ADM portal</h1>
                     <form id="login-form">
-                        <el-input placeholder="Username" v-model="uname"></el-input>
+                        <el-input placeholder="Username" v-model="uname" name="uname"></el-input>
                         <br>
-                        <el-input placeholder="Password" v-model="pswd"></el-input>
+                        <el-input placeholder="Password" v-model="pswd" name="pswd"></el-input>
                     </form>
-                    <el-button @click="signin" item-width="100%">Sign in</el-button>
+                    <br>
+                    <el-button type="primary" @click="signin"> Sign in </el-button>
                     <el-dialog v-model="alertVisible" title="Error">
                         <p>{{alertContent}}</p>
                     </el-dialog>
@@ -55,9 +58,58 @@
                 <div class="grid-content"></div>
             </el-col>
         </el-row>
-        <el-row :gutter="20" v-if="!loginVisible">
-            Test
-        </el-row>
+
+        <!-- Panel impl -->
+        <div v-if="!loginVisible">
+            <el-row class="tac">
+                <el-col :span="6">
+                    <div class="sidebar">
+                        <el-menu default-active="0" class="el-menu-vertical-demo">
+                            <el-menu-item index="0">
+                                <h2>Admin Panel</h2>
+                            </el-menu-item>
+                            <el-menu-item @click="subTabClick" index="1">Subscriptions</el-menu-item>
+                            <el-menu-item @click="fedTabClick" index="2">Feedbacks</el-menu-item>
+                        </el-menu>
+                    </div>
+                    <el-dialog v-model="alertVisible" title="Error">
+                        <p>{{alertContent}}</p>
+                    </el-dialog>
+                </el-col>
+                <el-col :span="18">
+                    <div v-if="activeTabIndex==1">
+                        <h1>&nbsp;&nbsp;Select what you want to do from left</h1>
+                    </div>
+                    <div v-if="activeTabIndex==1">
+                        <h1>&nbsp;&nbsp;Subscribers</h1>
+                        <el-table :data="subscribers" border style="width: 100%" @selection-change="handleSubscriberSelectionChange">
+                            <el-table-column type="selection" width="55"></el-table-column>
+                            <el-table-column property="timestamp" label="Date" width="120"></el-table-column>
+                            <el-table-column property="email" label="Email" width="300"></el-table-column>
+                            <el-table-column property="active" label="Active"></el-table-column>
+                        </el-table>
+                    </div>
+                    <div v-if="activeTabIndex==2">
+                        <h1>&nbsp;&nbsp;Feedbacks</h1>
+                        <el-card class="box-card" v-for="item of feedbacks">
+                            <div slot="header" class="clearfix">
+                                <span style="line-height: 36px;">{{item.subject}}</span>
+                                <el-button style="float: right;" type="primary">Operation button</el-button>
+                            </div>
+                            <ul>
+                                <li v-if="item.name">name: {{item.name}}</li>
+                                <li v-if="item.email">email: {{item.email}}</li>
+                                <li v-if="item.phone">phone: {{item.phone}}</li>
+                                <li v-if="item.timestamp">email: {{item.timestamp}}</li>
+                            </ul>
+                            <div class="text item">
+                                {{item.body}}
+                            </div>
+                        </el-card>
+                    </div>
+                </el-col>
+            </el-row>
+        </div>
     </div>
 </body>
 <script src="js/admin.js"></script>

@@ -110,5 +110,5 @@ func httpErrorCustom(w http.ResponseWriter, status int, errorContent string) {
 
 func httpSessionExpired(w http.ResponseWriter) {
 	w.WriteHeader(401)
-	w.Write([]byte("SESSION_EXPIRE"))
+	w.Write([]byte("SESSION_EXPIRED"))
 }

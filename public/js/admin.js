@@ -18,7 +18,11 @@ new Vue({
             uname: "",
             pswd: "",
             alertContent: "",
-            accessToken: undefined
+            accessToken: "",
+            activeTabIndex: 0,
+            subscribers: [],
+            subscribersSelection: [],
+            feedbacks: []
         }
     },
 
@@ -36,7 +40,7 @@ new Vue({
                 return;
             }
             $.ajax({
-                url: "admin/login",
+                url: "admin/signin",
                 type: 'POST',
                 timeout: 8000,
                 data: $('#login-form').serialize(),
@@ -45,10 +49,65 @@ new Vue({
                     this.loginVisible = false;
                 }).bind(this),
                 error: (function(err) {
-                    this.alertContent = "Login error" + err;
+                    this.alertContent = err;
                     this.alertVisible = true;
                 }).bind(this)
             });
+        },
+
+        subTabClick: function(e) {
+            this.activeTabIndex = 1;
+            $.ajax({
+                url: "admin/subscriber",
+                type: 'GET',
+                timeout: 8000,
+                dataType: 'json',
+                headers: { "Auth": this.accessToken },
+                success: (function(resp) {
+                    if (resp.data) {
+                        this.subscribers = resp.data.map(function(subscriber) {
+                            subscriber.active = subscriber.active.toString();
+                            return subscriber;
+                        });
+                    } else {
+                        this.alertContent = "Subscriber data unavailable";
+                        this.alertVisible = true;
+                    }
+                }).bind(this),
+                error: (function(err) {
+                    this.loginVisible = true;
+                    this.alertContent = err;
+                    this.alertVisible = true;
+                }).bind(this)
+            });
+        },
+
+        fedTabClick: function(e) {
+            this.activeTabIndex = 2;
+            $.ajax({
+                url: "admin/feedback",
+                type: 'GET',
+                timeout: 8000,
+                dataType: 'json',
+                headers: { "Auth": this.accessToken },
+                success: (function(resp) {
+                    if (resp.data) {
+                        this.feedbacks = resp.data;
+                    } else {
+                        this.alertContent = "Feedback data unavailable";
+                        this.alertVisible = true;
+                    }
+                }).bind(this),
+                error: (function(err) {
+                    this.loginVisible = true;
+                    this.alertContent = err;
+                    this.alertVisible = true;
+                }).bind(this)
+            });
+        },
+
+        handleSubscriberSelectionChange: function(val) {
+            this.subscribersSelection = val;
         }
     }
 })

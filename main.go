@@ -55,8 +55,10 @@ func main() {
 	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
 	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/subscribe", subscribeHandler)
+	http.HandleFunc("/admin", adminHandler)
 	http.HandleFunc("/admin/signin", adminSignInHandler)
 	http.HandleFunc("/admin/subscriber", adminSubscriberHandler)
+	http.HandleFunc("/admin/feedback", adminFeedbackHandler)
 	// Initialize database
 	args := "host=localhost user=" + *dbuname + " dbname=" + *dbname + " sslmode=disable password=" + *dbpswd
 	var err error
@@ -111,4 +113,8 @@ func contactHandler(w http.ResponseWriter, r *http.Request) {
 func astaxanthinHBHandler(w http.ResponseWriter, r *http.Request) {
 	// w.Write(loader.LoadView("astaxanthin-health-benefits"))
 	w.Write(astaxanthinHBView)
+}
+
+func adminHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write(loadView("admin"))
 }

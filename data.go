@@ -88,11 +88,8 @@ func adminSubscriberHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		token := r.Header.Get("Auth")
 		if validateToken(token) {
-			var subscribers = []*Subscriber{}
-			if err := db.Find(&subscribers); err != nil {
-				httpError500(w, http.StatusInternalServerError)
-				return
-			}
+			var subscribers []Subscriber
+			db.Find(&subscribers)
 			sendResponse(w, &Response{Data: subscribers})
 		} else {
 			httpSessionExpired(w)
@@ -113,12 +110,10 @@ func adminSubscriberHandler(w http.ResponseWriter, r *http.Request) {
 func adminFeedbackHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		token := r.Header.Get("Auth")
+		log.Println("TOKEN:" + token)
 		if validateToken(token) {
-			var feedbacks = []*Feedback{}
-			if err := db.Find(&feedbacks); err != nil {
-				httpError500(w, http.StatusInternalServerError)
-				return
-			}
+			var feedbacks []Feedback
+			db.Find(&feedbacks)
 			sendResponse(w, &Response{Data: feedbacks})
 		} else {
 			httpSessionExpired(w)
