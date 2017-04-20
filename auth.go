@@ -2,7 +2,6 @@ package main
 
 import (
 	"github.com/renstrom/shortuuid"
-	"log"
 	"net/http"
 	"strings"
 	"time"
@@ -18,9 +17,6 @@ func adminSignInHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		username := strings.ToLower(strings.TrimSpace(r.FormValue("uname")))
 		pswd := strings.TrimSpace(r.FormValue("pswd"))
-		log.Println("Credentials:")
-		log.Println(username)
-		log.Println(hash(pswd))
 		if username == ADM_UNAME && hash(pswd) == ADM_PSWD {
 			sessionCounter = 0
 			currentToken = UUIDGen()

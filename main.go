@@ -55,6 +55,7 @@ func main() {
 	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
 	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/subscribe", subscribeHandler)
+	http.HandleFunc("/feedback", feedbackHandler)
 	http.HandleFunc("/admin", adminHandler)
 	http.HandleFunc("/admin/signin", adminSignInHandler)
 	http.HandleFunc("/admin/subscriber", adminSubscriberHandler)

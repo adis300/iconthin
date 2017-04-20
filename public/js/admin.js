@@ -108,6 +108,10 @@ new Vue({
 
         handleSubscriberSelectionChange: function(val) {
             this.subscribersSelection = val;
+        },
+
+        replyFeedback: function(feedback) {
+            window.open("mailto:feedback.email");
         }
     }
 })

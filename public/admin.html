@@ -93,14 +93,14 @@
                         <h1>&nbsp;&nbsp;Feedbacks</h1>
                         <el-card class="box-card" v-for="item of feedbacks">
                             <div slot="header" class="clearfix">
-                                <span style="line-height: 36px;">{{item.subject}}</span>
-                                <el-button style="float: right;" type="primary">Operation button</el-button>
+                                <div><span style="color:#666">Subject: </span>{{item.subject}}</div>
+                                <el-button v-if="item.email" style="float: right;" type="primary" v-on:click="replyFeedback(item)">Reply</el-button>
                             </div>
                             <ul>
                                 <li v-if="item.name">name: {{item.name}}</li>
                                 <li v-if="item.email">email: {{item.email}}</li>
                                 <li v-if="item.phone">phone: {{item.phone}}</li>
-                                <li v-if="item.timestamp">email: {{item.timestamp}}</li>
+                                <li v-if="item.timestamp">time: {{new Date(item.timestamp)}}</li>
                             </ul>
                             <div class="text item">
                                 {{item.body}}

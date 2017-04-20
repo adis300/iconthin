@@ -51,10 +51,9 @@ func subscribeHandler(w http.ResponseWriter, r *http.Request) {
 		email := strings.ToLower(strings.TrimSpace(r.FormValue("email")))
 		if validateEmail(email) {
 			var subscriber = &Subscriber{Email: email, Active: true, Timestamp: time.Now().Unix()}
-			if err := db.Create(subscriber); err != nil {
-				log.Println("WARNING:Email is already subscribed:" + email)
-			}
-			sendResponse(w, &Response{Data: subscriber})
+			db.Create(subscriber)
+			http.Redirect(w, r, "/", 301)
+			// sendResponse(w, &Response{Data: subscriber})
 		} else {
 			httpError400(w, http.StatusBadRequest)
 		}
@@ -73,10 +72,9 @@ func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 
 		if subject != "" || body != "" {
 			var feedback = &Feedback{Email: email, Name: name, Phone: phone, Subject: subject, Body: body, Active: true, Timestamp: time.Now().Unix()}
-			if err := db.Create(feedback); err != nil {
-				log.Println("WARNING:Email is already subscribed:" + email)
-			}
-			sendResponse(w, &Response{Data: "Feedback submitted."})
+			db.Create(feedback)
+			http.Redirect(w, r, "/", 301)
+			// sendResponse(w, &Response{Data: "Feedback submitted."})
 			return
 		}
 	} else {
@@ -110,7 +108,6 @@ func adminSubscriberHandler(w http.ResponseWriter, r *http.Request) {
 func adminFeedbackHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "GET" {
 		token := r.Header.Get("Auth")
-		log.Println("TOKEN:" + token)
 		if validateToken(token) {
 			var feedbacks []Feedback
 			db.Find(&feedbacks)
