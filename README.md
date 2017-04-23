@@ -12,6 +12,8 @@ ssh -i "iconthin-key.pem" ec2-user@52.60.247.66
 # Deploy to instance
 ```
 scp -i iconthin-key.pem release.zip ec2-user@52.60.247.66:~/iconthin/release.zip
+unzip release.zip
+sudo ./iconthin_linux -dbpswd=YourDBPassword
 ```
 
 # Kill application on port
@@ -33,7 +35,7 @@ sudo service postgresql start
 ```
 # Login to Postgres
 ```
-sudo su - postgres
+// sudo su - postgres
 psql -U postgres
 
 
