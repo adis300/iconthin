@@ -27,7 +27,7 @@ html {
 }
 
 body {
-    color: #666;
+    color: #444;
     background-color: #fff;
     font-family: gandhi-sans;
     font-size: 14px;
@@ -389,6 +389,30 @@ div.product-logo-desc {
 h1.product-slogan {
     margin-top: 2px;
     color: #444;
+}
+
+#home-mission {
+    font-weight: thin;
+    min-height: 240px;
+    background-position: right;
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-image: url(../img/home-mission-bg.jpg);
+}
+
+#home-mission>p {
+    line-height: 180%;
+    font-size: 28px;
+}
+
+#home-mission .heavy {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+#home-mission .highlight {
+    font-size: 36px;
+    color: #24a565;
 }
 
 @media only screen and (max-width: 768px) {
