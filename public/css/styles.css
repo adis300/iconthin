@@ -612,17 +612,17 @@ h1.product-slogan {
     color: white;
 }
 
-#team-achievements {
+#team-news {
     margin: 12px 0 0 0;
     position: relative;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-image: url(../img/team-achievements-bg.jpg);
+    background-image: url(../img/team-news-bg.jpg);
     font-size: 15px;
     font-weight: thin;
 }
 
-#team-achievements>div.dimmer {
+#team-news>div.dimmer {
     padding: 12px 0;
     width: 100%;
     height: 100%;
@@ -630,32 +630,33 @@ h1.product-slogan {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-#team-achievements div.dimmer div.white-bg {
+#team-news div.dimmer div.white-bg {
     height: 320px;
     overflow: hidden;
 }
 
-#team-achievements [class*="col-"] {
+#team-news [class*="col-"] {
     min-height: 320px;
     max-height: 320px;
 }
 
-#team-achievements-green-chemistry {
+#team-news-content {
     height: 320px;
     overflow: hidden;
     background: white;
     /*background-size: 100% auto;
     background-repeat: no-repeat;
-    background-image: url(../img/team-achievements-green-chemistry.jpg);
+    background-image: url(../img/team-news-green-chemistry.jpg);
     */
 }
 
-#team-achievements-green-chemistry>img {
+#team-news-content>img {
+    width: 100%;
     min-height: 100%;
     min-width: 100%;
 }
 
-#team-achievements div.dimmer div.white-bg p {
+#team-news div.dimmer div.white-bg p {
     padding: 12px;
 }
 
