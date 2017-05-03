@@ -139,24 +139,23 @@
         </div>
     </section>
     <!-- Marker column impl -->
-    <section class="page">
+    <section class="page hidden-xs">
         <div id="product-record">
             <div class="row">
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-sm-4">
                     <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label id="num-label-0">0</label><br><span>protected</span>
+                    <label id="num-label-0">0</label><br>
+                    <span>meticulously selected<br>ingredients</span>
                 </div>
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-sm-4">
                     <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label id="num-label-1">0</label><br><span>protected</span>
+                    <label id="num-label-1">0</label><br>
+                    <span>natural astaxanthin</span>
                 </div>
-                <div class="col-sm-3 col-xs-6">
+                <div class="col-sm-4">
                     <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label id="num-label-2">0</label><br><span>protected</span>
-                </div>
-                <div class="col-sm-3 col-xs-6">
-                    <i class="fa fa-globe fa-fw accent"></i><br> over<br>
-                    <label id="num-label-3">0</label><br><span>protected</span>
+                    <label id="num-label-2">0</label><br>
+                    <span>more effective than<br>similar products</span>
                 </div>
             </div>
         </div>
@@ -168,14 +167,17 @@
             <span></span>
         </div>
         <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-5">
                 <img src="img/product-showcase.jpg">
             </div>
-            <div id="product-desc" class="col-sm-6">
-                <h4>Astaxanthin soft capsule</h4>
-                <p><br>Astaxanthin is the most powerful natural antioxidant that is ever discovered. So far, astaxanthin is one of the very few supplements that can cross the blood brain barrier and the strongest oxidant discovered in nature. The antioxidant
-                    power of Astaxanthin is 6000 times stronger than vitamin C, 550-1000 times than vitamin E, 10 times than beta0carotene, 60 times than grame seeds, 200 times than teapolyphenois, and 150 times more effective than anthocyanin, 75 times
-                    than lipoic acid, 800 times than coenzyme Q10, and 7 times than lycopene.
+            <div id="product-desc" class="col-sm-7">
+                <p>
+                    <h4>ASTAXANTHIN SOFT CAPSULE</h4>
+                    We offer the best professional health solution with the world's strongest natural antioxidant - astaxanthin. Our unique all-in-one formula contains over 10 different ingredients to maximize the health benefits to your body.
+                </p>
+                <p>
+                    <h4>AstaDaily<sup>&reg;</sup> is a reliable source of natural antioxidant and omega-3 fatty acids for the maintenance of good health.</h4>
+                    We offer the best professional health solution with the world's strongest natural antioxidant - astaxanthin. Our unique all-in-one formula contains over 10 different ingredients to maximize the health benefits to your body.
                 </p>
             </div>
         </div>
@@ -379,7 +381,7 @@
         })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
     </script>
     <script>
-        var elementBounds = [100, 110, 129, 50];
+        var elementBounds = [100, 110, 129];
         var timeInterval = 50;
 
         function incrementAnimated(element, bound) {
@@ -392,9 +394,8 @@
                 incrementAnimated(element, bound);
             });
         }
-        for (i = 0; i < 4; i++) {
+        for (i = 0; i < 3; i++)
             incrementAnimated(document.getElementById("num-label-" + i), elementBounds[i]);
-        }
     </script>
 </body>
 
