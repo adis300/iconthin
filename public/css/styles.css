@@ -47,7 +47,9 @@ a {
     text-decoration: none !important;
 }
 
-a:hover {
+a:hover,
+a:active,
+a:focus {
     color: #24a565;
 }
 
