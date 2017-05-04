@@ -91,21 +91,30 @@
                     </div>
                     <div v-if="activeTabIndex==2">
                         <h1>&nbsp;&nbsp;Feedbacks</h1>
-                        <el-card class="box-card" v-for="item of feedbacks">
-                            <div slot="header" class="clearfix">
-                                <div><span style="color:#666">Subject: </span>{{item.subject}}</div>
-                                <el-button v-if="item.email" style="float: right;" type="primary" v-on:click="replyFeedback(item)">Reply</el-button>
-                            </div>
-                            <ul>
-                                <li v-if="item.name">name: {{item.name}}</li>
-                                <li v-if="item.email">email: {{item.email}}</li>
-                                <li v-if="item.phone">phone: {{item.phone}}</li>
-                                <li v-if="item.timestamp">time: {{new Date(item.timestamp)}}</li>
-                            </ul>
-                            <div class="text item">
-                                {{item.body}}
-                            </div>
-                        </el-card>
+                        <div v-for="item of feedbacks">
+                            <el-card class="box-card">
+                                <div slot="header" class="clearfix">
+                                    <h4 v-if="item.subject">Re: {{item.subject}}
+                                    </h4>
+                                    <h4 v-if="!item.subject">Re: EMPTY SUBJECT
+                                    </h4>
+                                    <!--div><span style="color:#666">Subject: </span>{{item.subject}}</div-->
+                                    <el-button v-if="item.email" style="float: right;" type="primary" v-on:click="replyFeedback(item)">Reply</el-button>
+                                </div>
+                                <div class="text item">
+                                    <span v-if="item.email||item.name">From: {{item.name}} 
+                                        <span v-if="item.email"><span v-if="item.name">(</span>{{item.email}}<span v-if="item.name">)</span>
+                                    </span>
+                                    <br>
+                                    </span>
+                                    <span v-if="item.phone">Phone: {{item.phone}}<br></span>
+                                    <span v-if="item.timestamp">Date: {{formatDate(item.timestamp)}}<br></span>
+                                    <br>{{item.body}}
+                                </div>
+
+                            </el-card>
+                            <br>
+                        </div>
                     </div>
                 </el-col>
             </el-row>

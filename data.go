@@ -65,10 +65,10 @@ func subscribeHandler(w http.ResponseWriter, r *http.Request) {
 func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 	if r.Method == "POST" {
 		email := strings.ToLower(strings.TrimSpace(r.FormValue("email")))
-		name := strings.ToLower(strings.TrimSpace(r.FormValue("name")))
+		name := strings.TrimSpace(r.FormValue("name"))
 		phone := strings.ToLower(strings.TrimSpace(r.FormValue("phone")))
-		subject := strings.ToLower(strings.TrimSpace(r.FormValue("subject")))
-		body := strings.ToLower(strings.TrimSpace(r.FormValue("body")))
+		subject := strings.TrimSpace(r.FormValue("subject"))
+		body := strings.TrimSpace(r.FormValue("body"))
 
 		if subject != "" || body != "" {
 			var feedback = &Feedback{Email: email, Name: name, Phone: phone, Subject: subject, Body: body, Active: true, Timestamp: time.Now().Unix()}

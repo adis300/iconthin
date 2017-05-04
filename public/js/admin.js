@@ -22,12 +22,17 @@ new Vue({
             activeTabIndex: 0,
             subscribers: [],
             subscribersSelection: [],
-            feedbacks: []
+            feedbacks: [],
+            formatDate: function(timestamp) {
+                var date = new Date(timestamp * 1000);
+                return date.toLocaleString();
+            },
         }
     },
 
     // define methods under the `methods` object
     methods: {
+
         signin: function(e) {
             if (!validateUname(this.uname)) {
                 this.alertContent = "Invalid username";
