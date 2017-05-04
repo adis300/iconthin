@@ -116,7 +116,32 @@ new Vue({
         },
 
         replyFeedback: function(feedback) {
-            window.open("mailto:feedback.email");
+            var subject = "RE:%20EMPTY SUBJECT";
+            if (feedback.subject) subject = "RE:%20" + encodeURIComponent(feedback.subject);
+
+            var body = "\n\n";
+            if (feedback.name || feedback.email) {
+                body += "From: ";
+                if (feedback.name) {
+                    body += feedback.name;
+                    if (feedback.email) body += "(" + feedback.email + ")";
+                } else {
+                    body += feedback.email
+                }
+                body += "\n";
+            }
+            if (feedback.subject)
+                body += "Subject: " + feedback.subject + "\n";
+            if (feedback.timestamp)
+                body += "Date: " + this.formatDate(feedback.timestamp) + "\n";
+
+            if (feedback.phone)
+                body += "Phone: " + feedback.phone + "\n";
+            if (feedback.body)
+                body += "\n" + feedback.body + "\n";
+
+            body = encodeURIComponent(body);
+            window.open("mailto:" + feedback.email + "?subject=" + subject + "&body=" + body);
         }
     }
 })
