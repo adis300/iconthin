@@ -519,7 +519,7 @@ h1.product-slogan {
     position: relative;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-image: url(../img/team-news-bg.jpg);
+    background-image: url(../img/company-news-bg.jpg);
     font-size: 15px;
     font-weight: thin;
 }
@@ -614,47 +614,47 @@ h1.product-slogan {
 }
 
 
-/* Team page impl */
+/* company page impl */
 
-#team-banner {
+#company-banner {
     height: 280px;
     color: white;
     background-size: cover;
     background-repeat: no-repeat;
-    background-image: url(../img/team-banner-bg.jpg);
+    background-image: url(../img/company-banner-bg.jpg);
     color: white;
     font-size: 15px;
     font-weight: thin;
 }
 
-#team-banner>.page>p {
+#company-banner>.page>p {
     width: 100%;
     padding-top: 128px;
 }
 
-#team-banner-content {
+#company-banner-content {
     float: right;
     display: inline-block;
     color: #24a565;
     text-transform: uppercase;
 }
 
-#team-banner-content>span {
+#company-banner-content>span {
     font-size: 12px;
     color: white;
 }
 
-#team-news {
+#company-news {
     margin: 12px 0 0 0;
     position: relative;
     background-size: 100% auto;
     background-repeat: no-repeat;
-    background-image: url(../img/team-news-bg.jpg);
+    background-image: url(../img/company-news-bg.jpg);
     font-size: 15px;
     font-weight: thin;
 }
 
-#team-news>div.dimmer {
+#company-news>div.dimmer {
     padding: 12px 0;
     width: 100%;
     height: 100%;
@@ -662,33 +662,33 @@ h1.product-slogan {
     background-color: rgba(255, 255, 255, 0.4);
 }
 
-#team-news div.dimmer div.white-bg {
+#company-news div.dimmer div.white-bg {
     height: 320px;
     overflow: hidden;
 }
 
-#team-news [class*="col-"] {
+#company-news [class*="col-"] {
     min-height: 320px;
     max-height: 320px;
 }
 
-#team-news-content {
+#company-news-content {
     height: 320px;
     overflow: hidden;
     background: white;
     /*background-size: 100% auto;
     background-repeat: no-repeat;
-    background-image: url(../img/team-news-green-chemistry.jpg);
+    background-image: url(../img/company-news-green-chemistry.jpg);
     */
 }
 
-#team-news-content>img {
+#company-news-content>img {
     width: 100%;
     min-height: 100%;
     min-width: 100%;
 }
 
-#team-news div.dimmer div.white-bg p {
+#company-news div.dimmer div.white-bg p {
     padding: 12px;
 }
 

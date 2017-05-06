@@ -34,7 +34,7 @@ func main() {
 	homeView = loadView("home")
 	productView = loadView("product")
 	contactView = loadView("contact")
-	teamView = loadView("team")
+	teamView = loadView("company")
 	materialView = loadView("material")
 	astaxanthinView = loadView("astaxanthin")
 	astaxanthinHBView = loadView("astaxanthin-health-benefits")
@@ -49,7 +49,7 @@ func main() {
 	http.HandleFunc("/", homeHandler)
 	http.HandleFunc("/home", homeHandler)
 	http.HandleFunc("/product", productHandler)
-	http.HandleFunc("/team", teamHandler)
+	http.HandleFunc("/company", teamHandler)
 	http.HandleFunc("/material", materialHandler)
 	http.HandleFunc("/astaxanthin", astaxanthinHandler)
 	http.HandleFunc("/astaxanthin-health-benefits", astaxanthinHBHandler)
@@ -95,7 +95,7 @@ func productHandler(w http.ResponseWriter, r *http.Request) {
 	w.Write(productView)
 }
 func teamHandler(w http.ResponseWriter, r *http.Request) {
-	// w.Write(loader.LoadView("team"))
+	// w.Write(loader.LoadView("company"))
 	w.Write(teamView)
 }
 func materialHandler(w http.ResponseWriter, r *http.Request) {
