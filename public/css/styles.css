@@ -5,6 +5,8 @@
     src: url("../fonts/gandhiSans-regular.otf") format("opentype");
 }
 
+
+/*
 h3 {
     font-family: 'Agency FB', sans-serif;
     font-size: 26px;
@@ -14,7 +16,7 @@ h3 {
     border-bottom: 1px solid #484848;
     padding-bottom: 5px;
     margin-bottom: 7px;
-}
+}*/
 
 .white-bg {
     background: white;
@@ -61,6 +63,44 @@ a:focus {
     margin-right: auto;
     margin-left: auto;
     width: 800px;
+}
+
+@media only screen and (max-width: 3200px) {
+    .page {
+        width: 80%;
+        padding-left: 240px;
+        padding-right: 240px;
+    }
+    body {
+        font-size: 15
+    }
+}
+
+@media only screen and (max-width: 2000px) {
+    .page {
+        width: 80%;
+        padding-left: 200px;
+        padding-right: 200px;
+    }
+    body {
+        font-size: 15
+    }
+}
+
+@media only screen and (max-width: 1600px) {
+    .page {
+        width: 1200px;
+        padding-left: 160px;
+        padding-right: 160px;
+    }
+}
+
+@media only screen and (max-width: 1260px) {
+    .page {
+        width: 1080px;
+        padding-left: 100px;
+        padding-right: 100px;
+    }
 }
 
 @media only screen and (max-width: 1080px) {
