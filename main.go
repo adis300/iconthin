@@ -56,7 +56,7 @@ func main() {
 	http.HandleFunc("/contact", contactHandler)
 	http.HandleFunc("/subscribe", subscribeHandler)
 	http.HandleFunc("/feedback", feedbackHandler)
-	http.HandleFunc("/sustainable", sustainableHandler)
+	http.HandleFunc("/environment", environmentHandler)
 
 	http.HandleFunc("/admin", adminHandler)
 	http.HandleFunc("/admin/signin", adminSignInHandler)
@@ -117,8 +117,8 @@ func astaxanthinHBHandler(w http.ResponseWriter, r *http.Request) {
 	// w.Write(loader.LoadView("astaxanthin-health-benefits"))
 	w.Write(astaxanthinHBView)
 }
-func sustainableHandler(w http.ResponseWriter, r *http.Request) {
-	w.Write(loadView("sustainable"))
+func environmentHandler(w http.ResponseWriter, r *http.Request) {
+	w.Write(loadView("environment"))
 }
 
 func adminHandler(w http.ResponseWriter, r *http.Request) {
