@@ -149,6 +149,11 @@ a:focus {
     }
 }
 
+.section-inverse {
+    background-color: #66BB6A;
+    color: white;
+}
+
 .margin-sm-lr {
     padding-left: 12px;
     padding-right: 12px;
