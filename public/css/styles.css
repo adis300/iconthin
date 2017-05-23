@@ -154,6 +154,11 @@ a:focus {
     color: white;
 }
 
+.section-inverse p,
+.section-inverse h3 {
+    text-align: center;
+}
+
 .margin-sm-lr {
     padding-left: 12px;
     padding-right: 12px;
