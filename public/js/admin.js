@@ -8,6 +8,11 @@ function validatePswd(pswd) {
     return false;
 }
 
+var formatDate = function(timestamp) {
+    var date = new Date(timestamp * 1000);
+    return date.toLocaleString();
+};
+
 new Vue({
     el: '#admin-app',
     data: function() {
@@ -23,10 +28,7 @@ new Vue({
             subscribers: [],
             subscribersSelection: [],
             feedbacks: [],
-            formatDate: function(timestamp) {
-                var date = new Date(timestamp * 1000);
-                return date.toLocaleString();
-            },
+            formatDate: formatDate,
         }
     },
 
@@ -72,6 +74,7 @@ new Vue({
                     if (resp.data) {
                         this.subscribers = resp.data.map(function(subscriber) {
                             subscriber.active = subscriber.active.toString();
+                            subscriber.date = formatDate(subscriber.timestamp);
                             return subscriber;
                         });
                     } else {

@@ -24,6 +24,7 @@ type Feedback struct {
 	Name      string `json:"name" gorm:"column:name"`
 	Phone     string `json:"phone" gorm:"column:phone"`
 	Email     string `json:"email" gorm:"column:email"`
+	Company   string `json:"company" gorm:"column:company"`
 	Subject   string `json:"subject" gorm:"column:subject"`
 	Body      string `json:"body" gorm:"column:body"`
 	Active    bool   `json:"active" gorm:"column:active"`
@@ -67,11 +68,11 @@ func feedbackHandler(w http.ResponseWriter, r *http.Request) {
 		email := strings.ToLower(strings.TrimSpace(r.FormValue("email")))
 		name := strings.TrimSpace(r.FormValue("name"))
 		phone := strings.ToLower(strings.TrimSpace(r.FormValue("phone")))
-		subject := strings.TrimSpace(r.FormValue("subject"))
+		company := strings.TrimSpace(r.FormValue("company"))
 		body := strings.TrimSpace(r.FormValue("body"))
 
-		if subject != "" || body != "" {
-			var feedback = &Feedback{Email: email, Name: name, Phone: phone, Subject: subject, Body: body, Active: true, Timestamp: time.Now().Unix()}
+		if body != "" {
+			var feedback = &Feedback{Email: email, Name: name, Phone: phone, Company: company, Body: body, Active: true, Timestamp: time.Now().Unix()}
 			db.Create(feedback)
 			http.Redirect(w, r, "/", 301)
 			// sendResponse(w, &Response{Data: "Feedback submitted."})

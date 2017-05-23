@@ -84,7 +84,7 @@
                         <h1>&nbsp;&nbsp;Subscribers</h1>
                         <el-table :data="subscribers" border style="width: 100%" @selection-change="handleSubscriberSelectionChange">
                             <el-table-column type="selection" width="55"></el-table-column>
-                            <el-table-column property="timestamp" label="Date" width="120"></el-table-column>
+                            <el-table-column property="date" label="Date" width="120"></el-table-column>
                             <el-table-column property="email" label="Email" width="300"></el-table-column>
                             <el-table-column property="active" label="Active"></el-table-column>
                         </el-table>
@@ -94,9 +94,7 @@
                         <div v-for="item of feedbacks">
                             <el-card class="box-card">
                                 <div slot="header" class="clearfix">
-                                    <h4 v-if="item.subject">Re: {{item.subject}}
-                                    </h4>
-                                    <h4 v-if="!item.subject">Re: EMPTY SUBJECT
+                                    <h4 v-if="item.subject">Re: Iconthin feedback reply
                                     </h4>
                                     <!--div><span style="color:#666">Subject: </span>{{item.subject}}</div-->
                                     <el-button v-if="item.email" style="float: right;" type="primary" v-on:click="replyFeedback(item)">Reply</el-button>
@@ -107,7 +105,8 @@
                                     </span>
                                     <br>
                                     </span>
-                                    <span v-if="item.subject">Subject: {{item.subject}}<br></span>
+                                    <span v-if="item.company">Company: {{item.company}}<br></span>
+                                    <!--span v-if="item.subject">Subject: {{item.subject}}<br></span-->
                                     <span v-if="item.phone">Phone: {{item.phone}}<br></span>
                                     <span v-if="item.timestamp">Date: {{formatDate(item.timestamp)}}<br></span>
                                     <br>{{item.body}}
