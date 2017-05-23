@@ -167,11 +167,11 @@
                     </p>
                 </div>
                 <div class="col-sm-5">
-                    <h2 style="color:white;line-height:80%"><span id="num-label-0">88,000</span> m<sup>2</sup></h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-0">0</span> m<sup>2</sup></h2>
                     <p style="font-size:11px">microalgae cultivation facility</p>
-                    <h2 style="color:white;line-height:80%">Over <span id="num-label-1">10</span> tons</h2>
+                    <h2 style="color:white;line-height:80%">Over <span id="num-label-1">0</span> tons</h2>
                     <p style="font-size:11px">Heamatococcus pluvialis annual production</p>
-                    <h2 style="color:white;line-height:80%">Up to <span id="num-label-2">7</span>%</h2>
+                    <h2 style="color:white;line-height:80%">Up to <span id="num-label-2">0</span>%</h2>
                     <p style="font-size:11px">astaxanthin concentration in microalgae powder</p>
                 </div>
             </div>
@@ -184,11 +184,11 @@
             <br>
             <div class="row">
                 <div class="col-sm-5">
-                    <h2 style="color:white;line-height:80%"><span id="num-label-3">22</span> °C</h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-3">0</span> °C</h2>
                     <p style="font-size:11px">average temperature, best for microalgae cultivation</p>
-                    <h2 style="color:white;line-height:80%"><span id="num-label-4">1900</span> m</h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-4">0</span> m</h2>
                     <p style="font-size:11px">altitude with fresh air and water</p>
-                    <h2 style="color:white;line-height:80%"><span id="num-label-5">2450</span> hours</h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-5">0</span> hours</h2>
                     <p style="font-size:11px">annual sunlight with minimum variation
                     </p>
                 </div>
@@ -204,6 +204,24 @@
             </div>
             <br><br>
         </div>
+    </section>
+    <section class="page">
+        <br><br>
+        <div class="row">
+            <div class="col-sm-3">
+                <img src="img/cert-gmp.jpg">
+            </div>
+            <div class="col-sm-3">
+                <img style="margin-top:.5em" src="img/cert-halal.png">
+            </div>
+            <div class="col-sm-3">
+                <img src="img/cert-nongmo.png">
+            </div>
+            <div class="col-sm-3">
+                <img style="margin-top:1em" src="img/cert-iso9001.png">
+            </div>
+        </div>
+        <br><br>
     </section>
 
     <!-- Company achievements impl>
@@ -344,7 +362,9 @@
         }
         for (i = 0; i < 6; i++) {
             if (elementBounds[i] / 100 > 1) increments[i] = Math.round(elementBounds[i] / 100);
-            incrementAnimated(document.getElementById("num-label-" + i), elementBounds[i], increments[i]);
+            var node = document.getElementById("num-label-" + i);
+            console.log(node);
+            incrementAnimated(node, elementBounds[i], increments[i]);
         }
     </script>
 </body>
