@@ -157,16 +157,50 @@
     </section>
     <section class="section-inverse">
         <div class="page">
-            <br><br>
+            <br>
             <div class="row">
                 <div class="col-sm-7">
+                    <br><br>
                     <h3 style="color:white">World’s Highest Quality Astaxanthin Producer</h3>
-                    <p>Our world class 88,000 m2 astaxanthin facility is located in a pristine mountainous area with natural fresh air, water and sufficient sunshine.
+                    <p><br>Our world class 88,000 m2 astaxanthin facility is located in a pristine mountainous area with natural fresh air, water and sufficient sunshine.
+                        <br><br>
                     </p>
                 </div>
                 <div class="col-sm-5">
-                    Something else
+                    <h2 style="color:white;line-height:80%"><span id="num-label-0">88,000</span> m<sup>2</sup></h2>
+                    <p style="font-size:11px">microalgae cultivation facility</p>
+                    <h2 style="color:white;line-height:80%">Over <span id="num-label-1">10</span> tons</h2>
+                    <p style="font-size:11px">Heamatococcus pluvialis annual production</p>
+                    <h2 style="color:white;line-height:80%">Up to <span id="num-label-2">7</span>%</h2>
+                    <p style="font-size:11px">astaxanthin concentration in microalgae powder</p>
                 </div>
+            </div>
+            <br><br>
+        </div>
+    </section>
+
+    <section class="section-flat">
+        <div class="page">
+            <br>
+            <div class="row">
+                <div class="col-sm-5">
+                    <h2 style="color:white;line-height:80%"><span id="num-label-3">22</span> °C</h2>
+                    <p style="font-size:11px">average temperature, best for microalgae cultivation</p>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-4">1900</span> m</h2>
+                    <p style="font-size:11px">altitude with fresh air and water</p>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-5">2450</span> hours</h2>
+                    <p style="font-size:11px">annual sunlight with minimum variation
+                    </p>
+                </div>
+                <div class="col-sm-7">
+                    <br>
+                    <h3 style="color:white">A sunny paradise, uniquely suitable for microalgae
+                    </h3>
+                    <p><br>Microalgae cultivation is highly sensitive to their growing environment and choosing a naturally suitable place is extremely important not only for the highest quality of products but also saves energy and our environment.
+                        <br>
+                    </p>
+                </div>
+
             </div>
             <br><br>
         </div>
@@ -289,6 +323,29 @@
             r.src = t + h._hjSettings.hjid + j + h._hjSettings.hjsv;
             a.appendChild(r);
         })(window, document, '//static.hotjar.com/c/hotjar-', '.js?sv=');
+    </script>
+
+    <script>
+        var elementBounds = [88000, 10, 7, 22, 1900, 2450];
+        var increments = [1, 1, 1, 1, 1, 1];
+
+        function incrementAnimated(element, bound, increment) {
+            setTimeout(function() {
+                var num = parseInt(element.innerHTML);
+                if (num < bound) {
+                    num += increment;
+                    element.innerHTML = num; //.toLocaleString();
+                    incrementAnimated(element, bound, increment);
+                } else {
+                    if (num > bound) num = bound;
+                    element.innerHTML = num;
+                }
+            });
+        }
+        for (i = 0; i < 6; i++) {
+            if (elementBounds[i] / 100 > 1) increments[i] = Math.round(elementBounds[i] / 100);
+            incrementAnimated(document.getElementById("num-label-" + i), elementBounds[i], increments[i]);
+        }
     </script>
 </body>
 

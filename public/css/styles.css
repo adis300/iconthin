@@ -154,8 +154,17 @@ a:focus {
     color: white;
 }
 
+.section-flat {
+    background-color: #4FC3F7;
+    color: white;
+}
+
+.section-flat p,
+.section-flat h3,
+.section-flat h2,
 .section-inverse p,
-.section-inverse h3 {
+.section-inverse h3,
+.section-inverse h2 {
     text-align: center;
 }
 
@@ -480,6 +489,9 @@ h1.product-slogan {
     #home-banner .carousel-top {
         padding-top: 20px;
         height: 300px;
+    }
+    #home-banner #carousel {
+        display: none;
     }
     h2.product-logo,
     div.product-logo-desc,

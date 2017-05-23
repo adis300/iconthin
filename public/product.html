@@ -642,8 +642,8 @@
                 if (num < bound) {
                     num += 1;
                     element.innerHTML = num;
+                    incrementAnimated(element, bound);
                 }
-                incrementAnimated(element, bound);
             });
         }
         for (i = 0; i < 3; i++)
