@@ -20,6 +20,7 @@
     <script src="js/vendor/modernizr.js"></script>
     <script src="js/vendor/jquery.js"></script>
     <script src="js/vendor/bootstrap.min.js"></script>
+    <script src="js/vendor/ScrollWatch-1.2.0.min.js"></script>
     <!--[if lt IE 9]>
         <
         script src = "" >
@@ -167,11 +168,11 @@
                     </p>
                 </div>
                 <div class="col-sm-5">
-                    <h2 style="color:white;line-height:80%"><span id="num-label-0">0</span> m<sup>2</sup></h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-0" data-scroll-watch>0</span> m<sup>2</sup></h2>
                     <p style="font-size:11px">microalgae cultivation facility</p>
-                    <h2 style="color:white;line-height:80%">over <span id="num-label-1">0</span> tons</h2>
+                    <h2 style="color:white;line-height:80%">over <span id="num-label-1" data-scroll-watch>0</span> tons</h2>
                     <p style="font-size:11px">Heamatococcus pluvialis annual production</p>
-                    <h2 style="color:white;line-height:80%">up to <span id="num-label-2">0</span>%</h2>
+                    <h2 style="color:white;line-height:80%">up to <span id="num-label-2" data-scroll-watch>0</span>%</h2>
                     <p style="font-size:11px">astaxanthin concentration in microalgae powder</p>
                 </div>
             </div>
@@ -184,11 +185,11 @@
             <br>
             <div class="row">
                 <div class="col-sm-5">
-                    <h2 style="color:white;line-height:80%"><span id="num-label-3">0</span> °C</h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-3" data-scroll-watch>0</span> °C</h2>
                     <p style="font-size:11px">average temperature, best for microalgae cultivation</p>
-                    <h2 style="color:white;line-height:80%"><span id="num-label-4">0</span> m</h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-4" data-scroll-watch>0</span> m</h2>
                     <p style="font-size:11px">altitude with fresh air and water</p>
-                    <h2 style="color:white;line-height:80%"><span id="num-label-5">0</span> hours</h2>
+                    <h2 style="color:white;line-height:80%"><span id="num-label-5" data-scroll-watch>0</span> hours</h2>
                     <p style="font-size:11px">annual sunlight with minimum variation
                     </p>
                 </div>
@@ -372,14 +373,22 @@
                     if (num > bound) num = bound;
                     element.innerHTML = num;
                 }
-            });
+            }, 10);
         }
+
         for (i = 0; i < 6; i++) {
             if (elementBounds[i] / 100 > 1) increments[i] = Math.round(elementBounds[i] / 100);
-            var node = document.getElementById("num-label-" + i);
-            console.log(node);
-            incrementAnimated(node, elementBounds[i], increments[i]);
+            //var node = document.getElementById("num-label-" + i);
+            //incrementAnimated(node, elementBounds[i], increments[i]);
         }
+        var swInstance = new ScrollWatch({
+            onElementInView: function(data) {
+                var elementId = data.el.getAttribute('id');
+                var ind = parseInt(elementId.split("num-label-")[1]);
+                // console.log(ind);
+                incrementAnimated(data.el, elementBounds[ind], increments[ind])
+            }
+        });
     </script>
 </body>
 
