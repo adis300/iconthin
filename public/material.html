@@ -161,19 +161,20 @@
             <br>
             <div class="row">
                 <div class="col-sm-7">
-                    <br><br>
-                    <h3 style="color:white">World’s Highest Quality Astaxanthin Producer</h3>
+                    <br><br><br>
+                    <h2 style="color:white">World’s Highest Quality Astaxanthin Producer</h2>
                     <p><br>Our world class 88,000 m2 astaxanthin facility is located in a pristine mountainous area with natural fresh air, water and sufficient sunshine.
                         <br><br>
                     </p>
                 </div>
                 <div class="col-sm-5">
+                    <br>
                     <h2 style="color:white;line-height:80%"><span id="num-label-0" data-scroll-watch>0</span> m<sup>2</sup></h2>
-                    <p style="font-size:11px">microalgae cultivation facility</p>
+                    <p style="font-size:11px;margin-bottom:32px;">microalgae cultivation facility</p>
                     <h2 style="color:white;line-height:80%">over <span id="num-label-1" data-scroll-watch>0</span> tons</h2>
-                    <p style="font-size:11px">Heamatococcus pluvialis annual production</p>
+                    <p style="font-size:11px;margin-bottom:32px;">Heamatococcus pluvialis annual production</p>
                     <h2 style="color:white;line-height:80%">up to <span id="num-label-2" data-scroll-watch>0</span>%</h2>
-                    <p style="font-size:11px">astaxanthin concentration in microalgae powder</p>
+                    <p style="font-size:11px;margin-bottom:32px;">astaxanthin concentration in microalgae powder</p>
                 </div>
             </div>
             <br><br>
@@ -185,18 +186,19 @@
             <br>
             <div class="row">
                 <div class="col-sm-5">
+                    <br>
                     <h2 style="color:white;line-height:80%"><span id="num-label-3" data-scroll-watch>0</span> °C</h2>
-                    <p style="font-size:11px">average temperature, best for microalgae cultivation</p>
+                    <p style="font-size:11px;margin-bottom:32px;">average temperature, best for microalgae cultivation</p>
                     <h2 style="color:white;line-height:80%"><span id="num-label-4" data-scroll-watch>0</span> m</h2>
-                    <p style="font-size:11px">altitude with fresh air and water</p>
+                    <p style="font-size:11px;margin-bottom:32px;">altitude with fresh air and water</p>
                     <h2 style="color:white;line-height:80%"><span id="num-label-5" data-scroll-watch>0</span> hours</h2>
-                    <p style="font-size:11px">annual sunlight with minimum variation
+                    <p style="font-size:11px;margin-bottom:32px;">annual sunlight with minimum variation
                     </p>
                 </div>
                 <div class="col-sm-7">
-                    <br>
-                    <h3 style="color:white">A sunny paradise, uniquely suitable for microalgae
-                    </h3>
+                    <br><br>
+                    <h2 style="color:white">A sunny paradise, uniquely suitable for microalgae
+                    </h2>
                     <p><br>Microalgae cultivation is highly sensitive to their growing environment and choosing a naturally suitable place is extremely important not only for the highest quality of products but also saves energy and our environment.
                         <br>
                     </p>
@@ -363,6 +365,8 @@
         var increments = [1, 1, 1, 1, 1, 1];
 
         function incrementAnimated(element, bound, increment) {
+            var interval = 10;
+            if (increment == 1) interval = 60;
             setTimeout(function() {
                 var num = parseInt(element.innerHTML);
                 if (num < bound) {
@@ -373,7 +377,7 @@
                     if (num > bound) num = bound;
                     element.innerHTML = num;
                 }
-            }, 10);
+            }, interval);
         }
 
         for (i = 0; i < 6; i++) {
