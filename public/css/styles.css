@@ -471,6 +471,7 @@ h1.product-slogan {
 #home-mission {
     font-weight: thin;
     min-height: 240px;
+    padding-top: 32px;
     background-position: right;
     background-size: auto 100%;
     background-repeat: no-repeat;
